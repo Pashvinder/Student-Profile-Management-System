@@ -2,6 +2,8 @@ const form = document.getElementById("signUpForm");
 const validpassword = document.getElementById("validPassword");
 
 
+
+
 // Enter password is valid or not
 function passwordValidation(password) {
     const passLength = password.length;
@@ -72,4 +74,14 @@ form.addEventListener("submit", function (e) {
     }
 
 
+
 })
+
+const termsCheck = document.getElementById("termsCheck");
+const createAccountBtn = document.getElementById("createAccountBtn");
+
+createAccountBtn.hidden = true;
+
+termsCheck.addEventListener("change", function () {
+    createAccountBtn.hidden = !termsCheck.checked;
+});

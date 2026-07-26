@@ -14,6 +14,8 @@
         <form id="signUpForm">
             <h1>SignUp</h1>
 
+
+
             <!-- name -->
             <label for="full_name">Full Name</label>
             <input type="text" id="full_name"><br><br>
@@ -26,25 +28,37 @@
             <label for="inUsername">Username</label>
             <input type="text" name="username" id="inUsername"><br><br>
 
+
             <!-- phone -->
             <label for="inPhone">Phone Number</label>
             <input type="tel" name="phone" id="inPhone"><br><br>
 
+
             <!-- password -->
             <label for="inPassword">Password</label>
-            <input type="password" name="password" id="inPassword"><br><br>
+            <input type="password" name="password" id="inPassword"><br>
             <p id="validPassword"></p>
 
+
+            <!-- confirm Password -->
             <label for="inConfirm">Confirm Password</label>
             <input type="password" name="confirmPassword" id="inConfirm"><br>
             <p id="unmatchedPassword"></p>
-            <!-- Agree -->
 
+
+            <!-- Role -->
+            <label for="admin">Admin</label>
+            <input type="radio" value="Admin" name="role" id="admin" checked>
+            <label for="viewer">Viewer</label>
+            <input type="radio" value="Viewer" name="role" id="viewer"><br><br>
+
+
+            <!-- Agree -->
             <p> <input type="checkbox" name="agree" id="termsCheck">I agree to <a href="#">Terms of services</a> and <a
                     href="#">Privacy Policy </a></p>
 
             <!-- submit button -->
-            <button type="submit">CREATE ACCOUNT</button>
+            <button type="submit" id="createAccountBtn">CREATE ACCOUNT</button>
 
         </form>
 
