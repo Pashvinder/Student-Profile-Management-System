@@ -18,43 +18,44 @@
 
             <!-- name -->
             <label for="full_name">Full Name</label>
-            <input type="text" id="full_name"><br><br>
+            <input type="text" id="full_name" placeholder="Enter your full name"><br><br>
 
             <!-- email -->
             <label for="inEmail">Email Address</label>
-            <input type="email" name="email" id="inEmail"><br><br>
+            <input type="email" name="email" id="inEmail" placeholder="Enter your email"><br><br>
 
             <!-- username -->
             <label for="inUsername">Username</label>
-            <input type="text" name="username" id="inUsername"><br><br>
+            <input type="text" name="username" id="inUsername" placeholder="choose a username">
+            <p id="usernameError"></p>
 
 
             <!-- phone -->
             <label for="inPhone">Phone Number</label>
-            <input type="tel" name="phone" id="inPhone"><br><br>
+            <input type="tel" name="phone" id="inPhone" placeholder="Enter your phone number"><br><br>
 
 
             <!-- password -->
             <label for="inPassword">Password</label>
-            <input type="password" name="password" id="inPassword"><br>
+            <input type="password" name="password" id="inPassword" placeholder="Create a strong password"><br>
             <p id="validPassword"></p>
 
 
             <!-- confirm Password -->
             <label for="inConfirm">Confirm Password</label>
-            <input type="password" name="confirmPassword" id="inConfirm"><br>
+            <input type="password" name="confirmPassword" id="inConfirm" placeholder="confirm your password."><br>
             <p id="unmatchedPassword"></p>
 
 
             <!-- Role -->
             <label for="admin">Admin</label>
             <input type="radio" value="Admin" name="role" id="admin" checked>
-            <label for="viewer">Viewer</label>
-            <input type="radio" value="Viewer" name="role" id="viewer"><br><br>
+            <label for="user">User</label>
+            <input type="radio" value="User" name="role" id="user"><br><br>
 
 
             <!-- Agree -->
-            <p> <input type="checkbox" name="agree" id="termsCheck">I agree to <a href="#">Terms of services</a> and <a
+            <p> <input type="checkbox" name="agree" id="termsCheck" >I agree to <a href="#">Terms of services</a> and <a
                     href="#">Privacy Policy </a></p>
 
             <!-- submit button -->
@@ -63,6 +64,11 @@
         </form>
 
     </div>
+
+
+
+
+    
     <script src="../scripts/signup.js"></script>
 </body>
 

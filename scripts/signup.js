@@ -53,6 +53,32 @@ function passwordsMatch(password, confirmPass) {
 }
 
 
+
+// user already exists or not
+function validUsername(username) {
+
+
+    const usernameMessage = document.getElementById("usernameError");
+
+    let allRegisteredUsers = JSON.parse(localStorage.getItem("users"));
+    if (allRegisteredUsers == null) {
+        allRegisteredUsers = []
+    }
+    for (let i = 0; i < allRegisteredUsers.length; i++) {
+        if (allRegisteredUsers[i].username.toLowerCase() === username.toLowerCase()) {
+
+            console.log("Username Already Exists")
+            usernameMessage.innerText = "Username aleady exists";
+            usernameMessage.style.color = "red"
+            return false;
+
+        }
+        usernameMessage.innerText = ""
+        return false;
+
+    }
+}
+
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     const name = document.getElementById("full_name").value;
@@ -61,7 +87,11 @@ form.addEventListener("submit", function (e) {
     const phoneNo = document.getElementById("inPhone").value;
     const password = document.getElementById("inPassword").value;
     const confirmPass = document.getElementById("inConfirm").value;
+    const role = document.querySelector('input[name="role"]:checked').value;
 
+    if (!validUsername(username)){
+        return;
+    }
     if (!passwordValidation(password)) {
         return;
     }
@@ -70,8 +100,30 @@ form.addEventListener("submit", function (e) {
     }
     else {
         validpassword.innerText = "";
-        console.log("Passswords matched.")
+        console.log("Passswords matched")
     }
+    console.log(`${name} has signed Up as ${role}`);
+
+
+    // Storing User data o jandeeee 
+    const newUser = {
+        name: name,
+        email: email,
+        username: username,
+        phoneNo: phoneNo,
+        password: password,
+        role: role
+
+    }
+    let allRegisteredUsers = JSON.parse(localStorage.getItem("users"));
+    if (allRegisteredUsers == null) {
+        allRegisteredUsers = []
+    }
+    allRegisteredUsers.push(newUser);
+    localStorage.setItem("users", JSON.stringify(allRegisteredUsers));
+
+    console.log("Signed Up Successfully!")
+
 
 
 
