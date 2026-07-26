@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
 </head>
+
 <body>
-    <h1>Sign Up</h1>
+
+    <div class="container">
+
+        <form id="signUpForm">
+            <h1>SignUp</h1>
+
+            <!-- name -->
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name"><br><br>
+
+            <!-- email -->
+            <label for="inEmail">Email Address</label>
+            <input type="email" name="email" id="inEmail"><br><br>
+
+            <!-- username -->
+            <label for="inUsername">Username</label>
+            <input type="text" name="username" id="inUsername"><br><br>
+
+            <!-- phone -->
+            <label for="inPhone">Phone Number</label>
+            <input type="tel" name="phone" id="inPhone"><br><br>
+
+            <!-- password -->
+            <label for="inPassword">Password</label>
+            <input type="password" name="password" id="inPassword"><br><br>
+            <p id="validPassword"></p>
+            <label for="inConfirm">Confirm Password</label>
+            <input type="password" name="confirmPassword" id="inConfirm"><br><br>
+            <p id="unmatchedPassword"></p>
+            <!-- Agree -->
+
+            <p> <input type="checkbox" name="agree" id="termsCheck">I agree to <a href="#">Terms of services</a> and <a
+                    href="#">Privacy Policy </a></p>
+
+            <!-- submit button -->
+            <button type="submit">CREATE ACCOUNT</button>
+
+        </form>
+
+    </div>
+    <script src="../scripts/signup.js"></script>
 </body>
+
 </html>
