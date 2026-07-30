@@ -75,14 +75,11 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     padding: 15px;
     border: 1px solid grey;
     border-radius: 12px;
-
     cursor: pointer;
     transition: 0.25s ease;
-
     color: black;
     background-color: white;
 }
@@ -114,7 +111,6 @@ h1 {
     font-size: 14px;
 }
 
-/* ---------- TERMS ---------- */
 
 .terms_group {
     display: flex;
@@ -137,7 +133,6 @@ h1 {
     cursor: pointer;
 }
 
-/* ---------- BUTTON ---------- */
 
 #createAccountBtn {
     color: white;
@@ -153,8 +148,6 @@ h1 {
 #createAccountBtn:hover {
     background-color: #1a6f3e;
 }
-
-/* ---------- ERRORS ---------- */
 
 #usernameError,
 #validPassword,

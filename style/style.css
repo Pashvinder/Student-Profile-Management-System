@@ -12,3 +12,12 @@ a:link{
 a:visited{
     color: #19703fc0;
 }
+
+.input_box {
+    width: 15vw;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
