@@ -1,4 +1,4 @@
-# 🎓 EduProfile — Student Profile Management System
+# 🎓 Nodus — Student Profile Management System
 
 > *A student data platform that actually feels like a product.*
 
