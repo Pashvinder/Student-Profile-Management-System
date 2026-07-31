@@ -4,7 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
+    <title>Sign Up</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/signup.css">
 </head>
 
 <body>
@@ -12,64 +21,104 @@
     <div class="container">
 
         <form id="signUpForm">
-            <h1>SignUp</h1>
 
+            <!-- Heading -->
+            <div class="form_group">
+                <h1>Sign Up</h1>
+            </div>
 
+            <!-- Name -->
+            <div class="form_group">
+                <label for="full_name">Full Name</label>
+                <input type="text" id="full_name" class="input_box" placeholder="Enter your full name"
+                    autocomplete="name" required>
+            </div>
 
-            <!-- name -->
-            <label for="full_name">Full Name</label>
-            <input type="text" id="full_name" placeholder="Enter your full name"><br><br>
+            <!-- Email -->
+            <div class="form_group">
+                <label for="inEmail">Email Address</label>
+                <input type="email" id="inEmail" class="input_box" placeholder="Enter your email" autocomplete="email"
+                    required>
+            </div>
 
-            <!-- email -->
-            <label for="inEmail">Email Address</label>
-            <input type="email" name="email" id="inEmail" placeholder="Enter your email"><br><br>
+            <!-- Username -->
+            <div class="form_group">
+                <label for="inUsername">Username</label>
+                <input type="text" id="inUsername" class="input_box" placeholder="Choose a username"
+                    autocomplete="username" required>
 
-            <!-- username -->
-            <label for="inUsername">Username</label>
-            <input type="text" name="username" id="inUsername" placeholder="choose a username">
-            <p id="usernameError"></p>
+                <p id="usernameError"></p>
+            </div>
 
+            <!-- Phone -->
+            <div class="form_group">
+                <label for="inPhone">Phone Number</label>
+                <input type="tel" id="inPhone" class="input_box" placeholder="Enter your phone number"
+                    autocomplete="tel" required>
+            </div>
 
-            <!-- phone -->
-            <label for="inPhone">Phone Number</label>
-            <input type="tel" name="phone" id="inPhone" placeholder="Enter your phone number"><br><br>
+            <!-- Password -->
+            <div class="form_group">
+                <label for="inPassword">Password</label>
+                <input type="password" id="inPassword" class="input_box" placeholder="Create a strong password"
+                    autocomplete="new-password" required>
 
+                <p id="validPassword"></p>
+            </div>
 
-            <!-- password -->
-            <label for="inPassword">Password</label>
-            <input type="password" name="password" id="inPassword" placeholder="Create a strong password"><br>
-            <p id="validPassword"></p>
+            <!-- Confirm Password -->
+            <div class="form_group">
+                <label for="inConfirm">Confirm Password</label>
+                <input type="password" id="inConfirm" class="input_box" placeholder="Confirm your password"
+                    autocomplete="new-password" required>
 
-
-            <!-- confirm Password -->
-            <label for="inConfirm">Confirm Password</label>
-            <input type="password" name="confirmPassword" id="inConfirm" placeholder="confirm your password."><br>
-            <p id="unmatchedPassword"></p>
-
+                <p id="unmatchedPassword"></p>
+            </div>
 
             <!-- Role -->
-            <label for="admin">Admin</label>
-            <input type="radio" value="Admin" name="role" id="admin" checked>
-            <label for="user">User</label>
-            <input type="radio" value="User" name="role" id="user"><br><br>
+            <div class="role_group">
 
+                <label class="roleBox" for="admin">
+                    <input type="radio" id="admin" name="role" value="Admin" checked>
 
-            <!-- Agree -->
-            <p> <input type="checkbox" name="agree" id="termsCheck" >I agree to <a href="#">Terms of services</a> and <a
-                    href="#">Privacy Policy </a></p>
+                    <span>Admin</span>
+                    <p>Full Access</p>
+                </label>
 
-            <!-- submit button -->
-            <button type="submit" id="createAccountBtn">CREATE ACCOUNT</button>
+                <label class="roleBox" for="user">
+                    <input type="radio" id="user" name="role" value="User">
+
+                    <span>User</span>
+                    <p>Limited Access</p>
+                </label>
+
+            </div>
+
+            <!-- Terms -->
+            <div class="terms_group">
+
+                <input type="checkbox" id="termsCheck">
+
+                <label for="termsCheck">
+                    I agree to
+                    <a href="#" target="_blank">Terms of Service</a>
+                    and
+                    <a href="#" target="_blank">Privacy Policy</a>
+                </label>
+
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" id="createAccountBtn">
+                CREATE ACCOUNT
+            </button>
 
         </form>
 
     </div>
 
-
-
-
-    
     <script src="../scripts/signup.js"></script>
+
 </body>
 
 </html>

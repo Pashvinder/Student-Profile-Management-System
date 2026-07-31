@@ -1,0 +1,23 @@
+* {
+    font-family: "Teachers", sans-serif;
+}
+
+body{
+    background-color: #fdfdfd;
+}
+
+a:link{
+    color: #0b8100;
+}
+a:visited{
+    color: #19703fc0;
+}
+
+.input_box {
+    width: 15vw;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}

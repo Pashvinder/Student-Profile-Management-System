@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: "Teachers", sans-serif;
+}
+
+.container {
+    grid-column: 2;
+    width: 35vw;
+    height: 85vh;
+    justify-self: center;
+    align-self: center;
+    padding: 20px;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 2vh;
+}
+
+#signUpForm {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1 {
+    margin-top: -2vh;
+}
+
+.form_group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.form_group label {
+    font-weight: 500;
+}
+
+.input_box {
+    width: 15vw;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.input_box::placeholder {
+    text-align: center;
+}
+
+#usernameError,
+#validPassword,
+#unmatchedPassword {
+    margin: 0;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* ---------- ROLE SECTION ---------- */
+
+.role_group {
+    display: flex;
+    gap: 25px;
+}
+
+.roleBox {
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid grey;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    color: black;
+    background-color: white;
+}
+
+.roleBox:hover {
+    background-color: #1a6f3e;
+    color: white;
+    border-color: #1a6f3e;
+}
+
+.roleBox:has(input[type="radio"]:checked) {
+    background-color: #1a6f3e;
+    color: white;
+    border-color: #1a6f3e;
+}
+
+.roleBox input[type="radio"] {
+    accent-color: white;
+    margin-bottom: 10px;
+}
+
+.roleBox span {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.roleBox p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+.terms_group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.terms_group a {
+    text-decoration: none;
+}
+
+#termsCheck {
+    accent-color: #1a6f3e;
+    cursor: pointer;
+}
+
+
+.terms_group label {
+    cursor: pointer;
+}
+
+#createAccountBtn {
+    color: white;
+    background-color: #1a6f3dc5;
+    margin-top: 5px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#createAccountBtn:hover {
+    background-color: #1a6f3e;
+}
+
+#usernameError,
+#validPassword,
+#unmatchedPassword {
+    color: red;
+    min-height: 18px;
+}
