@@ -163,7 +163,7 @@ form.addEventListener("submit", function (e) {
     localStorage.setItem("users", JSON.stringify(allRegisteredUsers));
 
     console.log("Signed Up Successfully!");
-    window.location.href="../pages/signin.html"
+    window.location.href="signin.html"
 
     form.reset();
 
