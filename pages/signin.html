@@ -4,97 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In | Nodus</title>
+    <title>Sign In</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
-        rel="stylesheet">
-
-    <link rel="icon" href="../files/assets/logo_whitebg.png">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/signin.css">
+    <link rel="icon" type="image/x-icon" href="../files/assets/logo_whitebg.png">
+    
 </head>
 
 <body>
-    <main class="signin-shell">
-        <div class="signin-orb signin-orb-one"></div>
-        <div class="signin-orb signin-orb-two"></div>
 
-        <section class="signin-grid">
-            <div class="signin-brand animate">
-                <a class="brand-mark" href="index.html" aria-label="Go to Nodus home">
-                    <img src="../files/assets/logo.png" alt="Nodus logo">
-                    <span>Nodus</span>
-                </a>
+    <div class="container">
 
-                <div class="signin-copy">
-                    <p class="eyebrow">Student Profile Management System</p>
-                    <h1>Every academic identity, organized in one secure place.</h1>
-                    <p class="lead">
-                        Sign in to manage records, track progress, verify documents, and keep students,
-                        faculty, and administrators aligned.
-                    </p>
-                </div>
 
-                <div class="signin-highlights animate">
-                    <article>
-                        <span>Profiles</span>
-                        <strong>Centralized student records</strong>
-                    </article>
-                    <article>
-                        <span>Oversight</span>
-                        <strong>Attendance, academics, and milestones</strong>
-                    </article>
-                    <article>
-                        <span>Security</span>
-                        <strong>Role-based access across the institution</strong>
-                    </article>
-                </div>
+        <form id="form">
+            <h1>Sign In</h1>
 
-                <div class="signin-doodles" aria-hidden="true">
+            <input type="email" id="in_signEmail" class="input_box" placeholder="Enter your Email" required>
+
+            <input type="password" id="in_signPassword" class="input_box" placeholder="Enter your Password" required>
+
+            <a href="../pages/signup.html">New User?</a>
+            <input type="submit" value="Sign In" id="submitSignIn">
+
+        </form>
+        <p id="signinError"></p>
+
+                        <div class="signin-doodles" aria-hidden="true">
                     <img src="../files/assets/doodle/flying_plane_bw.png" class="doodle plane" alt="">
                     <img src="../files/assets/doodle/book_bw.png" class="doodle book" alt="">
                     <img src="../files/assets/doodle/light_bulb_bw.png" class="doodle bulb" alt="">
                     <img src="../files/assets/doodle/formula_bw.png" class="doodle formula" alt="">
+                    <img src="../files/assets/doodle/light_bulb.png" class="doodle clrBulb" alt="">
                 </div>
             </div>
-
-            <section class="signin-panel animate">
-                <div class="panel-intro">
-                    <p class="eyebrow">Welcome back</p>
-                    <h2>Sign in to your workspace</h2>
-                    <p>Use your registered email and password to continue into Nodus.</p>
-                </div>
-
-                <form id="form" class="signin-form">
-                    <label class="field">
-                        <span>Email Address</span>
-                        <input type="email" id="in_signEmail" class="input_box" placeholder="you@institution.edu"
-                            autocomplete="email" required>
-                    </label>
-
-                    <label class="field">
-                        <span>Password</span>
-                        <input type="password" id="in_signPassword" class="input_box" placeholder="Enter your password"
-                            autocomplete="current-password" required>
-                    </label>
-
-                    <div class="form-meta">
-                        <a href="signup.html" class="si_newUser">Create a new account</a>
-                        <span>Secure local access</span>
-                    </div>
-
-                    <input type="submit" value="Sign In" id="submitSignIn">
-                </form>
-
-                <p id="signinError" aria-live="polite"></p>
-            </section>
-        </section>
-    </main>
+    </div>
 
     <script src="../scripts/signin.js"></script>
+
 </body>
 
 </html>
