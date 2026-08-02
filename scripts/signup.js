@@ -163,11 +163,11 @@ form.addEventListener("submit", function (e) {
     localStorage.setItem("users", JSON.stringify(allRegisteredUsers));
 
     console.log("Signed Up Successfully!");
-    window.location.href="signin.html"
+    window.location.href = "signin.html";
 
     form.reset();
 
-    createAccountBtn.hidden = true;
+    createAccountBtn.disabled = true;
 });
 
 
@@ -175,10 +175,10 @@ form.addEventListener("submit", function (e) {
 const termsCheck = document.getElementById("termsCheck");
 const createAccountBtn = document.getElementById("createAccountBtn");
 
-createAccountBtn.hidden = true;
+createAccountBtn.disabled = true;
 
 termsCheck.addEventListener("change", function () {
 
-    createAccountBtn.hidden = !termsCheck.checked;
+    createAccountBtn.disabled = !termsCheck.checked;
 
 });

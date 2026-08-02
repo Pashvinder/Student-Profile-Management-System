@@ -1,0 +1,125 @@
+TILT-ON-HOVER IMAGE — extracted component
+============================================
+Drop the HTML wherever you want the image, put the CSS in your
+stylesheet, and put the JS in your script file (or a <script> tag).
+Works with any <img>; no other markup required.
+
+
+1) HTML
+-------------------------------------------------------------
+<div class="hero-shot-wrap">
+    <div class="shot-stage" id="shotStage">
+        <img id="shotImg" class="shot-img"
+             src="path/to/your-image.png"
+             alt="describe the image here">
+        <div class="shot-glare" id="shotGlare"></div>
+    </div>
+    <p class="shot-caption">Optional caption text</p>
+</div>
+
+
+2) CSS
+-------------------------------------------------------------
+.hero-shot-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+
+.shot-stage {
+  --rx: 4deg;    /* resting tilt on X axis   */
+  --ry: -8deg;   /* resting tilt on Y axis   */
+  --tz: 0px;     /* push-back depth on hover */
+  position: relative;
+  width: 100%;
+  perspective: 1800px;
+}
+
+.shot-img {
+  width: 100%;
+  display: block;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--tz));
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 32, 0.08);
+  box-shadow: 0 30px 80px rgba(14, 25, 30, 0.18);
+}
+
+.shot-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  opacity: var(--glare-o, 0);
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%),
+              rgba(255, 255, 255, 0.45), transparent 55%);
+  transition: opacity 0.3s ease;
+}
+
+.shot-caption {
+  font-family: "Teachers", sans-serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #0f1720;
+}
+
+
+3) JavaScript
+-------------------------------------------------------------
+const shotStage = document.getElementById("shotStage");
+const shotGlare = document.getElementById("shotGlare");
+
+if (shotStage) {
+    const BASE_RX = 4;    // resting tilt, degrees
+    const BASE_RY = -8;
+    const MAX_SWING = 6;  // extra degrees the pointer can add
+    const MAX_SINK = 10;  // px, how far the pressed corner drops
+
+    const resetStage = () => {
+        shotStage.style.setProperty("--rx", `${BASE_RX}deg`);
+        shotStage.style.setProperty("--ry", `${BASE_RY}deg`);
+        shotStage.style.setProperty("--tz", "0px");
+        if (shotGlare) shotGlare.style.setProperty("--glare-o", "0");
+    };
+
+    resetStage();
+
+    shotStage.addEventListener("mousemove", (e) => {
+        const rect = shotStage.getBoundingClientRect();
+        const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;  // -1 left  -> 1 right
+        const ny = ((e.clientY - rect.top) / rect.height) * 2 - 1;  // -1 top   -> 1 bottom
+
+        const rx = (BASE_RX + ny * -MAX_SWING).toFixed(2);
+        const ry = (BASE_RY + nx * MAX_SWING).toFixed(2);
+
+        const proximity = Math.max(Math.abs(nx), Math.abs(ny)); // 0 center -> 1 corner
+        const tz = (-proximity * MAX_SINK).toFixed(2);
+
+        shotStage.style.setProperty("--rx", `${rx}deg`);
+        shotStage.style.setProperty("--ry", `${ry}deg`);
+        shotStage.style.setProperty("--tz", `${tz}px`);
+
+        if (shotGlare) {
+            shotGlare.style.setProperty("--gx", `${((nx + 1) / 2) * 100}%`);
+            shotGlare.style.setProperty("--gy", `${((ny + 1) / 2) * 100}%`);
+            shotGlare.style.setProperty("--glare-o", "1");
+        }
+    });
+
+    shotStage.addEventListener("mouseleave", resetStage);
+}
+
+
+NOTES
+-------------------------------------------------------------
+- BASE_RX / BASE_RY set the resting tilt before the pointer touches it
+  (0 / 0 if you want it flat until hovered).
+- MAX_SWING controls how far the pointer can rotate it further.
+- MAX_SINK controls how far the nearest corner "presses" into the page.
+- If you reuse this more than once on a page, give each instance its
+  own ids (e.g. shotStage2 / shotGlare2) and duplicate the JS block
+  with the matching ids, since getElementById only grabs the first.

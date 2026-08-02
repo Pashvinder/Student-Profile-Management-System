@@ -2,10 +2,10 @@ const form = document.getElementById("form");
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
-    
+
     const signinEmail = document.getElementById("in_signEmail").value.trim();
     const signinPassword = document.getElementById("in_signPassword").value.trim();
-    let throwError=document.getElementById("signinError");
+    let throwError = document.getElementById("signinError");
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -17,14 +17,14 @@ form.addEventListener("submit", function (e) {
     });
 
     if (user) {
-        alert("Login Successful!");
+        console.log("Login Successful!");
 
         localStorage.setItem("currentUser", JSON.stringify(user));
 
-        window.location.href = "index.html"; 
+        window.location.href = "index.html";
     } else {
-        throwError.textContent= "Invalid Email or Password";
-        throwError.style.color="red";
+        throwError.textContent = "Invalid Email or Password";
+        throwError.style.color = "red";
 
     }
 });

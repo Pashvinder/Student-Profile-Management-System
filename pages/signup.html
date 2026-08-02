@@ -4,176 +4,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Create Account | Nodus</title>
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet">
 
-
-    <!-- all the links -->
     <link rel="icon" href="../files/assets/logo_whitebg.png">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/signup.css">
 </head>
 
 <body>
+    <main class="signup-shell">
+        <div class="signup-orb signup-orb-one"></div>
+        <div class="signup-orb signup-orb-two"></div>
 
-    <div class="SignupGrid">
-
-        <!-- LEFT SIDE -->
-
-        <div class="logo">
-            <a href="index.html"><img src="../files/assets/logo.png" alt="NodusLogo"></a>
-        </div>
-
-        <div class="leftContent">
-
-            <div class="leftText">
-                <h1>Welcome to Nodus</h1>
-
-                <p>
-                    Manage student profiles, track achievements,
-                    compare students and simplify academic management.
-                </p>
-                <!-- DOODLE IMAGES -->
-
-                <img src="../files/assets/doodle/book_bw.png" class="doodle book" alt="Book">
-
-                <img src="../files/assets/doodle/flying_plane_bw.png" class="doodle plane" alt="Paper Plane">
-
-                <img src="../files/assets/doodle/pencil_bw.png" class="doodle pencil" alt="Pencil">
-
-                <img src="../files/assets/doodle/globe_bw.png" class="doodle globe" alt="Globe">
-
-                <img src="../files/assets/doodle/light_bulb_bw.png" class="doodle bulb" alt="Light Bulb">
-                
-                <img src="../files/assets/doodle/formula_bw.png" class="doodle formula" alt="Light Bulb">
-
-            </div>
-
-        </div>
-
-        <!--  RIGHT SIDE  -->
-
-        <div class="container">
-
-            <form id="signUpForm">
-
-                <!-- Heading -->
-                <div class="form_group">
-                    <h1 >Sign <span </span style="color: #1c703e;"> Up </span></h1>
-                </div>
-
-                <!-- Name -->
-                <div class="form_group">
-                    <label for="full_name">Full Name</label>
-                    <input type="text" id="full_name" class="input_box" placeholder="Enter your full name"
-                        autocomplete="name" required>
-                </div>
-
-                <!-- Email -->
-                <div class="form_group">
-                    <label for="inEmail">Email Address</label>
-                    <input type="email" id="inEmail" class="input_box" placeholder="Enter your email"
-                        autocomplete="email" required>
-                </div>
-
-                <!-- Username -->
-                <div class="form_group">
-                    <label for="inUsername">Username</label>
-                    <input type="text" id="inUsername" class="input_box" placeholder="Choose a username"
-                        autocomplete="username" required>
-                </div>
-
-                <!-- Phone -->
-                <div class="form_group">
-                    <label for="inPhone">Phone Number</label>
-                    <input type="tel" id="inPhone" class="input_box" placeholder="Enter your phone number"
-                        autocomplete="tel" required>
-                </div>
-
-                <!-- Password -->
-                <div class="form_group">
-                    <label for="inPassword">Password</label>
-                    <input type="password" id="inPassword" class="input_box" placeholder="Create a strong password"
-                        autocomplete="new-password" required>
-                </div>
-
-                <!-- Confirm Password -->
-                <div class="form_group">
-                    <label for="inConfirm">Confirm Password</label>
-                    <input type="password" id="inConfirm" class="input_box" placeholder="Confirm your password"
-                        autocomplete="new-password" required>
-                </div>
-
-                <!-- Role -->
-                <div class="role_group">
-
-                    <label class="roleBox" for="admin">
-
-                        <input type="radio" id="admin" name="role" value="Admin" checked>
-
-                        <span>Admin</span>
-                        <p>Full Access</p>
-
-                    </label>
-
-                    <label class="roleBox" for="user">
-
-                        <input type="radio" id="user" name="role" value="User">
-
-                        <span>User</span>
-                        <p>Limited Access</p>
-
-                    </label>
-
-                </div>
-
-                <!-- Terms -->
-                <div class="terms_group">
-
-                    <input type="checkbox" id="termsCheck">
-
-                    <label for="termsCheck">
-                        I agree to
-                        <a href="#" target="_blank">Terms of Service</a>
-                        and
-                        <a href="#" target="_blank">Privacy Policy</a>
-                    </label>
-
-                </div>
-
-                <a href="signin.html" target="_blank">
-                    Already a user?
+        <section class="signup-grid">
+            <div class="signup-story animate">
+                <a class="brand-mark" href="index.html" aria-label="Go to Nodus home">
+                    <img src="../files/assets/logo.png" alt="Nodus logo">
+                    <span>Nodus</span>
                 </a>
 
-                <!-- Submit -->
-                <button type="submit" id="createAccountBtn">
-                    CREATE ACCOUNT
-                </button>
+                <div class="story-copy">
+                    <p class="eyebrow">Build your institutional workspace</p>
+                    <h1>Create the profile layer behind every student journey.</h1>
+                    <p class="lead">
+                        Nodus gives institutions one reliable place to maintain student identity, academic history,
+                        verified documents, achievements, and operational visibility.
+                    </p>
+                </div>
 
-            </form>
+                <div class="story-rail animate">
+                    <div class="rail-line"></div>
+                    <article>
+                        <span>01</span>
+                        <strong>Capture student, academic, and professional details</strong>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <strong>Track attendance, results, deadlines, and records</strong>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <strong>Give admins and faculty faster search and oversight</strong>
+                    </article>
+                </div>
 
-            <!-- Error -->
-            <p id="usernameError"></p>
-            <p id="unmatchedPassword"></p>
-            <p id="validPassword"></p>
+                <div class="signup-doodles" aria-hidden="true">
+                    <img src="../files/assets/doodle/globe_bw.png" class="doodle globe" alt="">
+                    <img src="../files/assets/doodle/pencil_bw.png" class="doodle pencil" alt="">
+                    <img src="../files/assets/doodle/book_bw.png" class="doodle book" alt="">
+                    <img src="../files/assets/doodle/light_bulb_bw.png" class="doodle bulb" alt="">
+                </div>
+            </div>
 
-        </div>
+            <section class="signup-panel animate">
+                <div class="panel-intro">
+                    <p class="eyebrow">Create account</p>
+                    <h2>Set up access to Nodus</h2>
+                    <p>Register your details below to start managing records inside the platform.</p>
+                </div>
 
-    </div>
+                <form id="signUpForm" class="signup-form">
+                    <div class="form-grid">
+                        <label class="field field-full">
+                            <span>Full Name</span>
+                            <input type="text" id="full_name" class="input_box" placeholder="Enter your full name"
+                                autocomplete="name" required>
+                        </label>
 
+                        <label class="field">
+                            <span>Email Address</span>
+                            <input type="email" id="inEmail" class="input_box" placeholder="name@institution.edu"
+                                autocomplete="email" required>
+                        </label>
 
+                        <label class="field">
+                            <span>Username</span>
+                            <input type="text" id="inUsername" class="input_box" placeholder="Choose a username"
+                                autocomplete="username" required>
+                        </label>
 
+                        <label class="field">
+                            <span>Phone Number</span>
+                            <input type="tel" id="inPhone" class="input_box" placeholder="+91 98765 43210"
+                                autocomplete="tel" required>
+                        </label>
 
-    <!-- Doodles -->
+                        <label class="field">
+                            <span>Password</span>
+                            <input type="password" id="inPassword" class="input_box"
+                                placeholder="Create a strong password" autocomplete="new-password" required>
+                        </label>
 
+                        <label class="field field-full">
+                            <span>Confirm Password</span>
+                            <input type="password" id="inConfirm" class="input_box" placeholder="Confirm your password"
+                                autocomplete="new-password" required>
+                        </label>
+                    </div>
+
+                    <div class="role_group" aria-label="Select role">
+                        <label class="roleBox" for="admin">
+                            <input type="radio" id="admin" name="role" value="Admin" checked>
+                            <span>Admin</span>
+                            <p>Institution-level access and oversight</p>
+                        </label>
+
+                        <label class="roleBox" for="user">
+                            <input type="radio" id="user" name="role" value="User">
+                            <span>User</span>
+                            <p>Personal profile access and record updates</p>
+                        </label>
+                    </div>
+
+                    <div class="terms_group">
+                        <input type="checkbox" id="termsCheck">
+                        <label for="termsCheck">
+                            I agree to the
+                            <a href="#" target="_blank" rel="noreferrer">Terms of Service</a>
+                            and
+                            <a href="#" target="_blank" rel="noreferrer">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="form-footer">
+                        <a href="signin.html">Already have an account?</a>
+                        <button type="submit" id="createAccountBtn">
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+
+                <div class="form-messages" aria-live="polite">
+                    <p id="usernameError"></p>
+                    <p id="unmatchedPassword"></p>
+                    <p id="validPassword"></p>
+                </div>
+            </section>
+        </section>
+    </main>
 
     <script src="../scripts/signup.js"></script>
-
 </body>
 
 </html>

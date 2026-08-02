@@ -1,444 +1,473 @@
+:root {
+    --nodus-ink: #0f1720;
+    --nodus-muted: #5e6c78;
+    --nodus-surface: rgba(255, 255, 255, 0.74);
+    --nodus-line: rgba(15, 23, 32, 0.1);
+    --nodus-accent: #1b7a46;
+    --nodus-accent-strong: #0e5b34;
+    --nodus-shadow: 0 30px 80px rgba(14, 25, 30, 0.16);
+}
+
 body {
     margin: 0;
     min-height: 100vh;
     font-family: "Teachers", sans-serif;
+    color: var(--nodus-ink);
     background:
-        linear-gradient(rgba(255, 255, 255, 0.50),
-            rgba(255, 255, 255, 0.50)),
-        url("../files/assets/page_bg.png");
-    background-size: cover;
-    background-position: center;
+        radial-gradient(circle at 12% 18%, rgba(27, 122, 70, 0.18), transparent 26%),
+        radial-gradient(circle at 90% 20%, rgba(92, 132, 161, 0.18), transparent 26%),
+        linear-gradient(145deg, #eef4ef 0%, #f7f3ee 48%, #eef5f8 100%);
+    overflow-x: hidden;
 }
 
-/*MAIN GRID*/
-
-.SignupGrid {
-    width: 100%;
+.signup-shell {
+    position: relative;
     min-height: 100vh;
+    padding: 30px;
+    isolation: isolate;
+}
 
+.signup-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 0.55;
+    z-index: -1;
+}
+
+.signup-orb-one {
+    top: 14%;
+    right: -100px;
+    width: 260px;
+    height: 260px;
+    background: rgba(27, 122, 70, 0.16);
+}
+
+.signup-orb-two {
+    left: -80px;
+    bottom: 4%;
+    width: 330px;
+    height: 330px;
+    background: rgba(77, 119, 146, 0.16);
+}
+
+.signup-grid {
+    min-height: calc(100vh - 60px);
     display: grid;
-
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 1fr;
-}
-
-
-/*LEFT SIDE*/
-.logo {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    display: flex;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 620px);
+    gap: 40px;
     align-items: center;
-    padding-left: 100px;
 }
 
-.logo img {
-    width: 7vw;
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--nodus-ink);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.brand-mark img {
+    width: 58px;
     height: auto;
 }
 
-.leftContent {
-    grid-column: 1/2;
-    grid-row: 2/3;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 40px;
+.story-copy {
+    max-width: 710px;
+    margin-top: 74px;
 }
 
-.leftText {
-    top: -500px;
-    text-align: center;
-    max-width: 500px;
+.eyebrow {
+    margin: 0 0 18px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--nodus-accent);
+    font-size: 0.82rem;
+    font-family: "Space Grotesk", sans-serif;
 }
 
-.leftText h1 {
+.story-copy h1 {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(3rem, 5.7vw, 5.8rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+}
+
+.lead {
+    max-width: 570px;
+    margin: 26px 0 0;
+    color: var(--nodus-muted);
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+.story-rail {
     position: relative;
-    transform: translateY(-80px);
-
-    font-size: 3rem;
-    margin-bottom: 20px;
+    display: grid;
+    gap: 18px;
+    max-width: 620px;
+    margin-top: 44px;
+    padding-left: 34px;
 }
 
-.leftText p {
-    transform: translateY(-90px);
-
-    font-size: 1.2rem;
-    line-height: 1.8;
+.rail-line {
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    bottom: 12px;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(27, 122, 70, 0.18), rgba(15, 23, 32, 0.1));
 }
 
-/*RIGHT SIDE*/
-
-.container {
-    background-color: rgba(255, 255, 255, 0.87);
-
-    grid-column: 2/3;
-    grid-row: 1/3;
-
-    justify-self: center;
-    align-self: center;
-
-    width: 35vw;
-    height: 85vh;
-
-    padding: 20px;
-
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.582);
-    border-radius: 2vh;
+.story-rail article {
+    position: relative;
+    padding: 6px 0 6px 22px;
 }
 
-/*FORM*/
+.story-rail article::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: -3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--nodus-accent);
+    box-shadow: 0 0 0 8px rgba(27, 122, 70, 0.08);
+}
 
-#signUpForm {
-    height: 100%;
+.story-rail span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--nodus-accent);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    font-family: "Space Grotesk", sans-serif;
+}
 
+.story-rail strong {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.signup-doodles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.doodle {
+    position: absolute;
+    opacity: 0.22;
+    animation: floatDrift 18s ease-in-out infinite;
+}
+
+.globe {
+    right: 12%;
+    top: 10%;
+    width: min(12vw, 140px);
+}
+
+.pencil {
+    right: 6%;
+    bottom: 18%;
+    width: min(9vw, 100px);
+    animation-delay: -5s;
+}
+
+.book {
+    left: 3%;
+    bottom: 2%;
+    width: min(15vw, 170px);
+    animation-delay: -3s;
+}
+
+.bulb {
+    left: 38%;
+    top: 52%;
+    width: min(11vw, 120px);
+    animation-delay: -8s;
+}
+
+.signup-panel {
+    padding: 32px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: var(--nodus-surface);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--nodus-shadow);
+}
+
+.panel-intro h2 {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2rem, 2.6vw, 2.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+}
+
+.panel-intro p:last-child {
+    margin: 14px 0 0;
+    color: var(--nodus-muted);
+    line-height: 1.6;
+}
+
+.signup-form {
+    margin-top: 26px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.field {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    gap: 10px;
 }
 
-.form_group {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 6px;
+.field-full {
+    grid-column: 1 / -1;
 }
 
-.form_group label {
+.field span {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
 .input_box {
-    width: 20vw;
-    padding: 5px;
-
-    text-align: center;
-
-    border: 1px solid #ccc;
-    border-radius: 8px;
-
-    box-sizing: border-box;
+    width: 100%;
+    min-height: 54px;
+    padding: 0 16px;
+    border: 1px solid var(--nodus-line);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--nodus-ink);
+    font-size: 1rem;
+    text-align: left;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .input_box::placeholder {
-    text-align: center;
+    color: rgba(94, 108, 120, 0.82);
+    text-align: left;
 }
 
-/*ERRORS*/
-
-#usernameError,
-#validPassword,
-#unmatchedPassword {
-    margin: 0;
-    min-height: 18px;
-
-    color: red;
-    font-size: 13px;
-    text-align: center;
+.input_box:focus {
+    outline: none;
+    border-color: rgba(27, 122, 70, 0.58);
+    box-shadow: 0 0 0 5px rgba(27, 122, 70, 0.12);
+    transform: translateY(-1px);
 }
-
-/*ROLE SECTION*/
 
 .role_group {
-    padding-top: 10px;
-    display: flex;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
 }
 
 .roleBox {
-    width: 10vw;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-
-    border: 1px solid grey;
-    border-radius: 12px;
-
+    gap: 8px;
+    min-height: 124px;
+    padding: 18px;
+    border: 1px solid rgba(15, 23, 32, 0.09);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.76);
     cursor: pointer;
-
-    transition: 0.25s ease;
-
-    color: black;
-    background-color: white;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .roleBox:hover {
-    background-color: #1a6f3e;
-    color: white;
-    border-color: #1a6f3e;
+    transform: translateY(-2px);
+    border-color: rgba(27, 122, 70, 0.34);
+    box-shadow: 0 18px 36px rgba(15, 23, 32, 0.08);
 }
 
-
-.roleBox input[type="radio"]{
+.roleBox input[type="radio"] {
     position: absolute;
     opacity: 0;
     pointer-events: none;
 }
 
-
 .roleBox:has(input[type="radio"]:checked) {
-    background-color: #1a6f3e;
-    color: white;
-    border-color: #1a6f3e;
-}
-
-.roleBox input[type="radio"] {
-    accent-color: white;
-    margin-bottom: 10px;
+    border-color: rgba(27, 122, 70, 0.46);
+    background: linear-gradient(180deg, rgba(27, 122, 70, 0.1), rgba(255, 255, 255, 0.92));
+    box-shadow: 0 18px 36px rgba(27, 122, 70, 0.12);
 }
 
 .roleBox span {
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .roleBox p {
     margin: 0;
-    font-size: 14px;
+    color: var(--nodus-muted);
+    line-height: 1.5;
 }
-
-/*TERMS*/
 
 .terms_group {
     display: flex;
-    align-items: center;
-    gap: 8px;
-
-    text-align: center;
-}
-
-.terms_group a {
-    text-decoration: none;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    color: var(--nodus-muted);
+    line-height: 1.55;
 }
 
 #termsCheck {
-    accent-color: #1a6f3e;
+    margin-top: 4px;
+    accent-color: var(--nodus-accent);
     cursor: pointer;
 }
 
-.terms_group label {
-    cursor: pointer;
+.terms_group a,
+.form-footer a {
+    color: var(--nodus-accent-strong);
+    text-decoration: none;
+    font-weight: 700;
 }
 
-/* BUTTON */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 22px;
+}
 
 #createAccountBtn {
-    color: white;
-    background-color: #1a6f3dc5;
-
-    margin-top: 5px;
-    padding: 12px 20px;
-
+    min-width: 180px;
+    min-height: 56px;
+    padding: 0 22px;
     border: none;
-    border-radius: 8px;
-
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--nodus-accent) 0%, var(--nodus-accent-strong) 100%);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     cursor: pointer;
-
-    transition: 0.2s ease;
+    box-shadow: 0 18px 36px rgba(14, 91, 52, 0.24);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 #createAccountBtn:hover {
-    background-color: #1a6f3e;
+    transform: translateY(-2px);
+    box-shadow: 0 24px 42px rgba(14, 91, 52, 0.3);
+    filter: saturate(1.08);
 }
 
-
-
-/* Responsiveness */
-/*RESPONSIVE */
-
-@media (max-width: 900px) {
-
-    .SignupGrid {
-
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-
-    }
-
-    .logo {
-
-        grid-column: 1/2;
-        grid-row: 1/2;
-        justify-content: center;
-        padding: 20px 0;
-
-    }
-
-    .logo img {
-        width: 25vw;
-        height: auto;
-    }
-
-    .leftContent {
-
-        grid-column: 1/2;
-        grid-row: 2/3;
-
-        padding: 30px;
-
-    }
-
-    .container {
-        padding: 10px;
-        grid-column: 1/2;
-        grid-row: 3/4;
-
-        width: 90%;
-        height: auto;
-
-        margin: 30px 0;
-
-    }
-
-    .input_box {
-
-        width: 80%;
-
-    }
-
-    .roleBox {
-
-        width: 35vw;
-
-    }
-
+#createAccountBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.56;
+    box-shadow: none;
+    transform: none;
+    filter: grayscale(0.08);
 }
 
-
-/*DOODLE IMAGES*/
-
-/*DOODLE*/
-
-.leftContent {
-    position: relative;
+.form-messages {
+    margin-top: 14px;
 }
 
-.doodle {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-    animation: doodleFloat 20s linear infinite;
-
+#usernameError,
+#validPassword,
+#unmatchedPassword {
+    margin: 6px 0 0;
+    min-height: 20px;
+    color: #b42318;
+    font-size: 0.92rem;
 }
 
-.book {
-    transform: rotate(10deg);
-    left: 5%;
-    bottom: 5%;
-    width: 20vw;
+.animate {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
-.plane {
-    left: 1%;
-    top: -10%;
-    width: 20vw;
-}
-
-.pencil {
-    right: 5%;
-    top: 8%;
-    width: 10vw;
-}
-
-.globe {
-    transform: rotate(20deg);
-    right: 1%;
-    bottom: 5%;
-    width: 15vw;
-}
-
-.bulb {
-    transform: rotate(-20deg);
-    left: 1%;
-    bottom: 40%;
-    width: 15vw;
-}
-
-.formula {
-    transform: rotate(-20deg);
-    left: 40%;
-    bottom: 50px;
-    width: 25vw;
-}
-
-
-
-
-@media (max-width:900px) {
-
-    .book {
-        width: 60px;
+@keyframes appear {
+    from {
+        opacity: 0;
+        clip-path: inset(100% 100% 0 0);
+        transform: translateY(36px);
     }
 
-    .plane {
-        width: 35px;
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: translateY(0);
     }
-
-    .pencil {
-        width: 30px;
-    }
-
-    .globe {
-        width: 55px;
-    }
-
 }
 
-
-
-
-
-
-/* Animations */
-
-@keyframes doodleFloat {
-
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    15% {
-        transform: translateY(-4px) rotate(2deg);
-    }
-
-    30% {
-        transform: translateY(-8px) rotate(5deg);
-    }
-
-    45% {
-        transform: translateY(-14px) rotate(2deg);
+@keyframes floatDrift {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
     }
 
     50% {
-        transform: translateY(-16px) rotate(0deg);
+        transform: translate3d(0, -18px, 0) rotate(4deg);
     }
-
-    60% {
-        transform: translateY(-14px) rotate(-2deg);
-    }
-
-    75% {
-        transform: translateY(-8px) rotate(-5deg);
-    }
-
-    90% {
-        transform: translateY(-3px) rotate(-2deg);
-    }
-
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-
 }
 
+@media (max-width: 1080px) {
+    .signup-shell {
+        padding: 22px;
+    }
 
+    .signup-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .story-copy {
+        margin-top: 34px;
+    }
+
+    .signup-panel {
+        max-width: 760px;
+    }
+}
+
+@media (max-width: 760px) {
+    .signup-shell {
+        padding: 16px;
+    }
+
+    .signup-panel {
+        padding: 22px 18px;
+        border-radius: 24px;
+    }
+
+    .form-grid,
+    .role_group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #createAccountBtn {
+        width: 100%;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+}
