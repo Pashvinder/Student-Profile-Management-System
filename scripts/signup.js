@@ -170,15 +170,16 @@ form.addEventListener("submit", function (e) {
     createAccountBtn.disabled = true;
 });
 
-
-
 const termsCheck = document.getElementById("termsCheck");
 const createAccountBtn = document.getElementById("createAccountBtn");
 
-createAccountBtn.disabled = true;
+// Hide button initially
+createAccountBtn.style.display = "none";
 
 termsCheck.addEventListener("change", function () {
-
-    createAccountBtn.disabled = !termsCheck.checked;
-
+    if (termsCheck.checked) {
+        createAccountBtn.style.display = "block";
+    } else {
+        createAccountBtn.style.display = "none";
+    }
 });
