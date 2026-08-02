@@ -1,35 +1,263 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Teachers", sans-serif;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.50),
+            rgba(255, 255, 255, 0.50)),
+        url("../files/assets/page_bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*MAIN GRID*/
+
+.SigninGrid {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr;
+
+    position: relative;
+}
+
+
+
+
+/*CONTAINER*/
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 20vw;
-    height: 50vh;
+    background-color: rgba(250, 247, 247, 0.342);
+    grid-column: 1/2;
+    grid-row: 2/3;
     justify-self: center;
     align-self: center;
+    margin-top: 20vh;
+    width: 25vw;
+    height: 40vh;
     padding: 20px;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.582);
     border-radius: 2vh;
+    z-index: 20;
 }
-#signInForm {
+
+/*FORM*/
+
+#form {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    gap: 10px;
+    padding: 10px;
 }
 
+
+/*INPUT*/
+
+.input_box {
+    width: 22vw;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+.input_box::placeholder {
+    text-align: center;
+}
+
+
+/*NEW USER LINK*/
+
+.si_newUser {
+    font-size: 14px;
+    align-self: flex-end;
+    padding-right: 15px;
+}
+
+
+/*ERROR*/
+
+#signinError {
+    margin: 0;
+    min-height: 18px;
+
+    color: red;
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/*BUTTON*/
 
 #submitSignIn {
     color: white;
     background-color: #1a6f3dc5;
+
     margin-top: 5px;
     padding: 12px 20px;
+
     border: none;
     border-radius: 8px;
+
     cursor: pointer;
+
     transition: 0.2s ease;
 }
 
 #submitSignIn:hover {
     background-color: #1a6f3e;
+}
+
+
+/*DOODLE IMAGES*/
+
+.doodle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    animation: doodleFloat 20s linear infinite;
+}
+
+.book {
+    transform: rotate(10deg);
+    left: 20%;
+    bottom: 10%;
+    width: 30vw;
+}
+
+.plane {
+    left: 1%;
+    top: 15%;
+    width: 30vw;
+}
+
+.pencil {
+    right: 20%;
+    top: 12%;
+    width: 15vw;
+}
+
+.globe {
+    transform: rotate(20deg);
+    right: 20%;
+    bottom: 5%;
+    width: 20vw;
+}
+
+.bulb {
+    transform: rotate(-20deg);
+    left: -1%;
+    top: 55%;
+    width: 20vw;
+}
+
+.formula {
+    transform: rotate(-15deg);
+    right: 2%;
+    bottom: 25%;
+    width: 35vw;
+}
+.clrBulb {
+    transform: rotate(-15deg);
+    right: 20%;
+    bottom: 5%;
+    width: 30vw;
+}
+
+
+/*RESPONSIVE*/
+
+@media (max-width: 900px) {
+
+    .si_logo {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .si_logo img {
+        width: 25vw;
+    }
+
+    .container {
+        width: 88%;
+        padding: 15px;
+    }
+
+    .input_box {
+        width: 80%;
+    }
+
+    .book {
+        width: 55px;
+    }
+
+    .plane {
+        width: 35px;
+    }
+
+    .pencil {
+        width: 30px;
+    }
+
+    .globe {
+        width: 50px;
+    }
+
+    .bulb {
+        width: 40px;
+    }
+
+    .formula {
+        width: 65px;
+    }
+
+}
+
+
+/* Animations */
+
+@keyframes doodleFloat {
+
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    15% {
+        transform: translateY(-4px) rotate(2deg);
+    }
+
+    30% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+
+    45% {
+        transform: translateY(-14px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(0deg);
+    }
+
+    60% {
+        transform: translateY(-14px) rotate(-2deg);
+    }
+
+    75% {
+        transform: translateY(-8px) rotate(-5deg);
+    }
+
+    90% {
+        transform: translateY(-3px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
 }

@@ -12,110 +12,165 @@
     <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet">
 
+
+    <!-- all the links -->
+    <link rel="icon" href="../files/assets/logo_whitebg.png">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/signup.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="SignupGrid">
 
-        <form id="signUpForm">
+        <!-- LEFT SIDE -->
 
-            <!-- Heading -->
-            <div class="form_group">
-                <h1>Sign Up</h1>
-            </div>
+        <div class="logo">
+            <a href="index.html"><img src="../files/assets/logo.png" alt="NodusLogo"></a>
+        </div>
 
-            <!-- Name -->
-            <div class="form_group">
-                <label for="full_name">Full Name</label>
-                <input type="text" id="full_name" class="input_box" placeholder="Enter your full name"
-                    autocomplete="name" required>
-            </div>
+        <div class="leftContent">
 
-            <!-- Email -->
-            <div class="form_group">
-                <label for="inEmail">Email Address</label>
-                <input type="email" id="inEmail" class="input_box" placeholder="Enter your email" autocomplete="email"
-                    required>
-            </div>
+            <div class="leftText">
+                <h1>Welcome to Nodus</h1>
 
-            <!-- Username -->
-            <div class="form_group">
-                <label for="inUsername">Username</label>
-                <input type="text" id="inUsername" class="input_box" placeholder="Choose a username"
-                    autocomplete="username" required>
+                <p>
+                    Manage student profiles, track achievements,
+                    compare students and simplify academic management.
+                </p>
+                <!-- DOODLE IMAGES -->
 
-                <p id="usernameError"></p>
-            </div>
+                <img src="../files/assets/doodle/book_bw.png" class="doodle book" alt="Book">
 
-            <!-- Phone -->
-            <div class="form_group">
-                <label for="inPhone">Phone Number</label>
-                <input type="tel" id="inPhone" class="input_box" placeholder="Enter your phone number"
-                    autocomplete="tel" required>
-            </div>
+                <img src="../files/assets/doodle/flying_plane_bw.png" class="doodle plane" alt="Paper Plane">
 
-            <!-- Password -->
-            <div class="form_group">
-                <label for="inPassword">Password</label>
-                <input type="password" id="inPassword" class="input_box" placeholder="Create a strong password"
-                    autocomplete="new-password" required>
+                <img src="../files/assets/doodle/pencil_bw.png" class="doodle pencil" alt="Pencil">
 
-                <p id="validPassword"></p>
-            </div>
+                <img src="../files/assets/doodle/globe_bw.png" class="doodle globe" alt="Globe">
 
-            <!-- Confirm Password -->
-            <div class="form_group">
-                <label for="inConfirm">Confirm Password</label>
-                <input type="password" id="inConfirm" class="input_box" placeholder="Confirm your password"
-                    autocomplete="new-password" required>
-
-                <p id="unmatchedPassword"></p>
-            </div>
-
-            <!-- Role -->
-            <div class="role_group">
-
-                <label class="roleBox" for="admin">
-                    <input type="radio" id="admin" name="role" value="Admin" checked>
-
-                    <span>Admin</span>
-                    <p>Full Access</p>
-                </label>
-
-                <label class="roleBox" for="user">
-                    <input type="radio" id="user" name="role" value="User">
-
-                    <span>User</span>
-                    <p>Limited Access</p>
-                </label>
+                <img src="../files/assets/doodle/light_bulb_bw.png" class="doodle bulb" alt="Light Bulb">
+                
+                <img src="../files/assets/doodle/formula_bw.png" class="doodle formula" alt="Light Bulb">
 
             </div>
 
-            <!-- Terms -->
-            <div class="terms_group">
+        </div>
 
-                <input type="checkbox" id="termsCheck">
+        <!--  RIGHT SIDE  -->
 
-                <label for="termsCheck">
-                    I agree to
-                    <a href="#" target="_blank">Terms of Service</a>
-                    and
-                    <a href="#" target="_blank">Privacy Policy</a>
-                </label>
+        <div class="container">
 
-            </div>
+            <form id="signUpForm">
 
-            <!-- Submit -->
-            <button type="submit" id="createAccountBtn">
-                CREATE ACCOUNT
-            </button>
+                <!-- Heading -->
+                <div class="form_group">
+                    <h1 >Sign <span </span style="color: #1c703e;"> Up </span></h1>
+                </div>
 
-        </form>
+                <!-- Name -->
+                <div class="form_group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" class="input_box" placeholder="Enter your full name"
+                        autocomplete="name" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form_group">
+                    <label for="inEmail">Email Address</label>
+                    <input type="email" id="inEmail" class="input_box" placeholder="Enter your email"
+                        autocomplete="email" required>
+                </div>
+
+                <!-- Username -->
+                <div class="form_group">
+                    <label for="inUsername">Username</label>
+                    <input type="text" id="inUsername" class="input_box" placeholder="Choose a username"
+                        autocomplete="username" required>
+                </div>
+
+                <!-- Phone -->
+                <div class="form_group">
+                    <label for="inPhone">Phone Number</label>
+                    <input type="tel" id="inPhone" class="input_box" placeholder="Enter your phone number"
+                        autocomplete="tel" required>
+                </div>
+
+                <!-- Password -->
+                <div class="form_group">
+                    <label for="inPassword">Password</label>
+                    <input type="password" id="inPassword" class="input_box" placeholder="Create a strong password"
+                        autocomplete="new-password" required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form_group">
+                    <label for="inConfirm">Confirm Password</label>
+                    <input type="password" id="inConfirm" class="input_box" placeholder="Confirm your password"
+                        autocomplete="new-password" required>
+                </div>
+
+                <!-- Role -->
+                <div class="role_group">
+
+                    <label class="roleBox" for="admin">
+
+                        <input type="radio" id="admin" name="role" value="Admin" checked>
+
+                        <span>Admin</span>
+                        <p>Full Access</p>
+
+                    </label>
+
+                    <label class="roleBox" for="user">
+
+                        <input type="radio" id="user" name="role" value="User">
+
+                        <span>User</span>
+                        <p>Limited Access</p>
+
+                    </label>
+
+                </div>
+
+                <!-- Terms -->
+                <div class="terms_group">
+
+                    <input type="checkbox" id="termsCheck">
+
+                    <label for="termsCheck">
+                        I agree to
+                        <a href="#" target="_blank">Terms of Service</a>
+                        and
+                        <a href="#" target="_blank">Privacy Policy</a>
+                    </label>
+
+                </div>
+
+                <a href="signin.html" target="_blank">
+                    Already a user?
+                </a>
+
+                <!-- Submit -->
+                <button type="submit" id="createAccountBtn">
+                    CREATE ACCOUNT
+                </button>
+
+            </form>
+
+            <!-- Error -->
+            <p id="usernameError"></p>
+            <p id="unmatchedPassword"></p>
+            <p id="validPassword"></p>
+
+        </div>
 
     </div>
+
+
+
+
+    <!-- Doodles -->
+
 
     <script src="../scripts/signup.js"></script>
 
