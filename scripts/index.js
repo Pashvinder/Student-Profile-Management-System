@@ -1,5 +1,4 @@
 /* ── Auth Actions ── */
-
 function logoutUser() {
     localStorage.removeItem('currentUser');
     window.location.href = 'index.html';   // back to landing, no login
@@ -9,6 +8,8 @@ function switchUser() {
     localStorage.removeItem('currentUser');
     window.location.href = 'signin.html';   // go to login page
 }
+
+
 
 
 /* ── Load Current User ── */
@@ -66,7 +67,7 @@ function changeText() {
         topEl.classList.add("visible");
         bottomEl.classList.remove("hidden");
         bottomEl.classList.add("visible");
-    }, 400);
+    }, 500);
 }
 
 if (topEl && bottomEl) {
