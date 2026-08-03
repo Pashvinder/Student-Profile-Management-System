@@ -50,6 +50,9 @@ function showPhrase(index) {
     bottomEl.textContent = phrases[index][1];
 }
 
+
+
+
 function changeText() {
     topEl.classList.remove("visible");
     topEl.classList.add("hidden");
