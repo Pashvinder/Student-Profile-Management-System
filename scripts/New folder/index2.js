@@ -1,58 +1,26 @@
-/* ── Auth Actions ── */
-function logoutUser() {
-    localStorage.removeItem('currentUser');
-    window.location.href = 'index.html';   // back to landing, no login
-}
-
-function switchUser() {
-    localStorage.removeItem('currentUser');
-    window.location.href = 'signin.html';   // go to login page
-}
-
-
-
-
-/* ── Load Current User ── */
-var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-if (currentUser) {
-    document.getElementById('profileName').textContent = 'Hi, ' + currentUser.name;
-    document.getElementById('profileRole').textContent = currentUser.role || 'Student';
-}
-
-
-
-
-
-
-
-
-
 /* ── Rotating Text ── */
 var phrases = [
-    ["Manage", "Student Profiles"],
-    ["Track", "Academic Progress"],
-    ["View", "Semester Wrapped"],
-    ["Predict", "Career Paths"],
-    ["Export", "Profile Cards"],
+    ["Manage",    "Student Profiles"],
+    ["Track",     "Academic Progress"],
+    ["View",      "Semester Wrapped"],
+    ["Predict",   "Career Paths"],
+    ["Export",    "Profile Cards"],
     ["Filter by", "Skills"],
-    ["Earn", "Performance Badges"],
-    ["Compare", "Student Growth"],
-    ["Discover", "Top Performers"],
-    ["Monitor", "Skill Development"],
-    ["Unlock", "Student Insights"]
+    ["Earn",      "Performance Badges"],
+    ["Compare",   "Student Growth"],
+    ["Discover",  "Top Performers"],
+    ["Monitor",   "Skill Development"],
+    ["Unlock",    "Student Insights"]
 ];
 
 var currentIndex = 0;
-var topEl = document.getElementById("topText");
+var topEl    = document.getElementById("topText");
 var bottomEl = document.getElementById("bottomText");
 
 function showPhrase(index) {
-    topEl.textContent = phrases[index][0];
+    topEl.textContent    = phrases[index][0];
     bottomEl.textContent = phrases[index][1];
 }
-
-
-
 
 function changeText() {
     topEl.classList.remove("visible");
@@ -60,14 +28,14 @@ function changeText() {
     bottomEl.classList.remove("visible");
     bottomEl.classList.add("hidden");
 
-    setTimeout(function () {
+    setTimeout(function() {
         currentIndex = (currentIndex + 1) % phrases.length;
         showPhrase(currentIndex);
         topEl.classList.remove("hidden");
         topEl.classList.add("visible");
         bottomEl.classList.remove("hidden");
         bottomEl.classList.add("visible");
-    }, 500);
+    }, 400);
 }
 
 if (topEl && bottomEl) {

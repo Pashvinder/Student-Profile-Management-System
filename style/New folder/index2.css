@@ -114,8 +114,7 @@ body {
 
 
 .hero-shot-wrap {
-  padding: 10px;
-  top: 12vh;
+  top: 10vh;
   right: 3vw;
   display: flex;
   flex-direction: column;
@@ -179,8 +178,9 @@ body {
   color: #111;
 }
 
+/* black */
 .text-line.bottom {
-  color: #1c703e;
+  color: #1D9E75;
 }
 
 /* green */
@@ -193,98 +193,4 @@ body {
 .text-line.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-
-
-.doodle {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-    animation: doodleFloat 20s linear infinite;
-    
-
-}
-
-.book {
-    transform: rotate(10deg);
-    left: 5%;
-    bottom: 5%;
-    width: 20vw;
-}
-
-.plane {
-    left: 35%;
-    top: 10%;
-    width: 20vw;
-}
-
-.pencil {
-    right: 5%;
-    top: 8%;
-    width: 10vw;
-}
-
-.globe {
-    transform: rotate(20deg);
-    right: 75%;
-    top: 15%;
-    width: 15vw;
-}
-.bulb{
-    transform: rotate(-20deg);
-    right: 55%;
-    width: 15vw;
-}
-
-
-.formula {
-    transform: rotate(-10deg);
-    left: 40%;
-    top: 65%;
-    width: 25vw;
-}
-
-
-
-
-@keyframes doodleFloat {
-
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    15% {
-        transform: translateY(-4px) rotate(2deg);
-    }
-
-    30% {
-        transform: translateY(-8px) rotate(5deg);
-    }
-
-    45% {
-        transform: translateY(-14px) rotate(2deg);
-    }
-
-    50% {
-        transform: translateY(-16px) rotate(0deg);
-    }
-
-    60% {
-        transform: translateY(-14px) rotate(-2deg);
-    }
-
-    75% {
-        transform: translateY(-8px) rotate(-5deg);
-    }
-
-    90% {
-        transform: translateY(-3px) rotate(-2deg);
-    }
-
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-
 }
