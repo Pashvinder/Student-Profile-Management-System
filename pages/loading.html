@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=index.html">
+    <title>Document</title>
+    <style>
+        /* Screen ke center me karne ke liye */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container vertical alignment aur spacing ke liye */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Photo aur loading line ke beech ka space */
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .square{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 10px solid black;
+            margin: auto;
+            border-top: 10px solid green;
+            animation: mycol 3s linear infinite;
+        }
+        @keyframes mycol{ 
+           0% {transform: rotate(0deg);}
+            25%{transform: rotate(90deg);}
+            50%{transform: rotate(180deg);}
+            75%{transform: rotate(270deg);}
+           100% {transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Photo ke liye place (src me apni image ka path daal dena) -->
+        <img src="../files/assets/logo_text.png" alt="Profile Photo" class="profile-pic" height="200px">
+        
+        <!-- Aapka loading spinner -->
+        <div class="square"></div>
+    </div>
+
+</body>
+</html>
