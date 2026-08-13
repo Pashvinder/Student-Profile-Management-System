@@ -1,214 +1,252 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nodus</title>
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-   
-        <!-- all the links -->
-    <link rel="icon" href="../files/assets/logo_whitebg.png">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/index.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- all the links -->
+    <link rel="icon" href="../files/assets/logo_whitebg.png" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/index.css" />
 
     <!-- Lordicon -->
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-</head>
+  </head>
 
-<body>
-    
+  <body>
     <div id="splash-overlay">
-        <div id="splash-logo">
-            <img src="../files/assets/logo_text.png" alt="nodus" />
-        </div>
+      <div id="splash-logo">
+        <img src="../files/assets/logo_text.png" alt="nodus" />
+      </div>
     </div>
 
     <div class="container">
+      <div class="header">
+        <nav class="navbar">
+          <a href="index.html">Home</a>
+          <a href="developing.html">Manage</a>
+          <a href="developing.html">Battle</a>
+          <a href="developing.html">Report</a>
+          <a href="developing.html">SomeAnotherFeature</a>
+        </nav>
 
-        <div class="header">
+        <!-- Profile Icon with Dropdown -->
+        <div class="profile-wrapper">
+          <lord-icon
+            src="https://cdn.lordicon.com/bushiqea.json"
+            trigger="hover"
+            colors="primary:#008200"
+            style="width: 38px; height: 38px; cursor: pointer"
+          >
+          </lord-icon>
 
-            <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="developing.html">Manage</a>
-                <a href="developing.html">Battle</a>
-                <a href="developing.html">Report</a>
-                <a href="developing.html">SomeAnotherFeature</a>
-            </nav>
+          <div class="profile-info">
+            <span class="profile-name" id="profileName">Hi </span>
+            <span class="profile-role" id="profileRole"></span>
+          </div>
 
-            <!-- Profile Icon with Dropdown -->
-            <div class="profile-wrapper">
+          <div class="profile-dropdown">
+            <div class="dropdown-card">
+              <button class="dropdown-item switch" onclick="switchUser()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-people"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"
+                  />
+                </svg>
+                Switch User
+              </button>
 
-                <lord-icon src="https://cdn.lordicon.com/bushiqea.json" trigger="hover" colors="primary:#008200"
-                    style="width:38px;height:38px; cursor:pointer;">
-                </lord-icon>
-
-                <div class="profile-info">
-                    <span class="profile-name" id="profileName">Hi </span>
-                    <span class="profile-role" id="profileRole"></span>
-                </div>
-
-
-
-                <div class="profile-dropdown">
-                    <div class="dropdown-card">
-
-                        <button class="dropdown-item switch" onclick="switchUser()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-people" viewBox="0 0 16 16">
-                                <path
-                                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
-                            </svg>
-                            Switch User
-                        </button>
-
-                        <button class="dropdown-item logout" onclick="logoutUser()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
-                                <path fill-rule="evenodd"
-                                    d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
-                            </svg>
-                            Logout
-                        </button>
-
-                    </div>
-                </div>
+              <button class="dropdown-item logout" onclick="logoutUser()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
+                  />
+                </svg>
+                Logout
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
 
+
+
+      <div class="heroSectionLeft">
+        <div class="hero-text-content">
+          <div class="text-box">
+            <span class="text-line top visible" id="topText"></span>
+            <span class="text-line bottom visible" id="bottomText"></span>
+          </div>
+          <p class="hero-label">Student Profile Management</p>
         </div>
 
-        <div class="heroSectionLeft">
-            <div class="hero-text-content">
-                <div class="text-box">
-                    <span class="text-line top visible" id="topText"></span>
-                    <span class="text-line bottom visible" id="bottomText"></span>
-                </div>
-                <p class="hero-label">Student Profile Management</p>
-            </div>
-
-
-            <div class="signin-doodles" aria-hidden="true">
-                <img src="../files/assets/doodle/flying_plane_bw.png" class="doodle plane" alt="">
-                <img src="../files/assets/doodle/book_bw.png" class="doodle book" alt="">
-                <img src="../files/assets/doodle/light_bulb_bw.png" class="doodle bulb" alt="">
-                <img src="../files/assets/doodle/formula_bw.png" class="doodle formula" alt="">
-                <img src="../files/assets/doodle/globe_bw.png" class="doodle globe" alt="">
-                <img src="../files/assets/doodle/pencil_bw.png" class="doodle pencil" alt="">
-            </div>
+        <div class="signin-doodles" aria-hidden="true">
+          <img
+            src="../files/assets/doodle/flying_plane_bw.png"
+            class="doodle plane"
+            alt=""
+          />
+          <img
+            src="../files/assets/doodle/book_bw.png"
+            class="doodle book"
+            alt=""
+          />
+          <img
+            src="../files/assets/doodle/light_bulb_bw.png"
+            class="doodle bulb"
+            alt=""
+          />
+          <img
+            src="../files/assets/doodle/formula_bw.png"
+            class="doodle formula"
+            alt=""
+          />
+          <img
+            src="../files/assets/doodle/globe_bw.png"
+            class="doodle globe"
+            alt=""
+          />
+          <img
+            src="../files/assets/doodle/pencil_bw.png"
+            class="doodle pencil"
+            alt=""
+          />
         </div>
+      </div>
 
-        <div class="heroSectionRight">
-
-            <!-- // tilt on hover // -->
-            <div class="hero-shot-wrap">
-                <div class="shot-stage" id="shotStage">
-                    <img id="shotImg" class="shot-img" src="../files/assets/temp_UI.png" alt="describe the image here">
-                    <div class="shot-glare" id="shotGlare"></div>
-                </div>
-            </div>
-
+      <div class="heroSectionRight">
+        <!-- // tilt on hover // -->
+        <div class="hero-shot-wrap">
+          <div class="shot-stage" id="shotStage">
+            <img
+              id="shotImg"
+              class="shot-img"
+              src="../files/assets/temp_UI.png"
+              alt="describe the image here"
+            />
+            <div class="shot-glare" id="shotGlare"></div>
+          </div>
         </div>
-
+      </div>
     </div>
 
-    
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <h1>Hi</h1>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-<footer class="footer">
-    <div class="foot-container">
-
+    <footer class="footer">
+      <div class="foot-container">
         <div class="row gy-4">
+          <!-- Logo -->
+          <div class="col-lg-4">
+            <h3 class="footer-logo">
+              <img
+                src="../files/assets/logo.png"
+                alt="Logo"
+                class="footer-logo-img"
+              />
+              Student Profile Manager
+            </h3>
 
-            <!-- Logo -->
-            <div class="col-lg-4">
-                <h3 class="footer-logo">
-                    <img src="../files/assets/logo.png" alt="Logo" class="footer-logo-img">
-                    Student Profile Manager
-                </h3>
+            <p>
+              Organize your academic journey in one place. Manage your profile,
+              achievements, certificates, projects, and resume with ease.
+            </p>
+          </div>
 
-                <p>
-                    Organize your academic journey in one place. Manage your
-                    profile, achievements, certificates, projects, and resume
-                    with ease.
-                </p>
+          <!-- Navigation -->
+          <div class="col-lg-2 col-md-4">
+            <h5>Navigation</h5>
+
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="profile.html">My Profile</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="col-lg-3 col-md-4">
+            <h5>Resources</h5>
+
+            <ul class="footer-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </div>
+
+          <!-- Social -->
+          <div class="col-lg-3 col-md-4">
+            <h5>Connect</h5>
+
+            <div class="social-links">
+              <a href="https://github.com/" target="_blank">
+                <i class="bi bi-github"></i>
+              </a>
+
+              <a href="https://linkedin.com/in/" target="_blank">
+                <i class="bi bi-linkedin"></i>
+              </a>
+
+              <a href="https://instagram.com/" target="_blank">
+                <i class="bi bi-instagram"></i>
+              </a>
+
+              <a href="mailto:yourmail@gmail.com">
+                <i class="bi bi-envelope-fill"></i>
+              </a>
             </div>
 
-            <!-- Navigation -->
-            <div class="col-lg-2 col-md-4">
-                <h5>Navigation</h5>
-
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="profile.html">My Profile</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Resources -->
-            <div class="col-lg-3 col-md-4">
-                <h5>Resources</h5>
-
-                <ul class="footer-links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">FAQs</a></li>
-                </ul>
-            </div>
-
-            <!-- Social -->
-            <div class="col-lg-3 col-md-4">
-                <h5>Connect</h5>
-
-                <div class="social-links">
-
-                    <a href="https://github.com/" target="_blank">
-                        <i class="bi bi-github"></i>
-                    </a>
-
-                    <a href="https://linkedin.com/in/" target="_blank">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-
-                    <a href="https://instagram.com/" target="_blank">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-
-                    <a href="mailto:yourmail@gmail.com">
-                        <i class="bi bi-envelope-fill"></i>
-                    </a>
-
-                </div>
-
-                <p class="mt-3 mb-0">
-                    Made with ❤️ for students.
-                </p>
-
-            </div>
-
+            <p class="mt-3 mb-0">Made with ❤️ for students.</p>
+          </div>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="footer-bottom">
-            © 2026 Student Profile Manager • All Rights Reserved
+          © 2026 Student Profile Manager • All Rights Reserved
         </div>
-
-    </div>
-</footer>
+      </div>
+    </footer>
 
     <script src="../scripts/index.js"></script>
-</body>
-
+  </body>
 </html>
