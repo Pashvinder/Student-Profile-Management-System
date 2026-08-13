@@ -20,6 +20,9 @@ a:visited {
     box-sizing: border-box;
 }
 
+.h1{
+    color: #008200;
+}
 
 .navbar {
     width: 50vw;
