@@ -4,27 +4,634 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <style>
-        body {
-            background: url('../files/assets/page_bg.png');
-        }
-    </style>
+
+    <title>Nodus Dashboard</title>
+
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/dashboard.css">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 </head>
 
-<body style="margin:0; height:100vh; display:flex; justify-content:center; align-items:center;">
+<body>
 
-    <div style="display:flex; flex-direction:column; align-items:center; gap:20px;">
-        <video src="../files/assets/underConstruction.mp4" controls autoplay loop
-            style="max-width:90%; max-height:60vh;">
-         </video>
-        <a href="index.html" style="text-align:center; text-decoration:none; color:white;">
-            <img src="../files/assets/goback.png    " 
-                alt="Go back" style="width:200px;">
-        </a>
+    <div class="dashboard">
+
+        <!-- =================================
+             GRID 1 : SIDEBAR
+        ================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <img
+                    src="../files/assets/logo.png"
+                    alt="Nodus Logo"
+                >
+
+                <div>
+                    <h2>SPMS</h2>
+                    <p>Student Profile<br>Management System</p>
+                </div>
+
+            </div>
+
+
+            <!-- Sidebar Navigation -->
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="active">
+                    <i class="bi bi-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="students.html">
+                    <i class="bi bi-people"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="add-student.html">
+                    <i class="bi bi-person-plus"></i>
+                    <span>Add Student</span>
+                </a>
+
+                <a href="import.html">
+                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                    <span>Import CSV</span>
+                </a>
+
+                <a href="battle.html">
+                    <i class="bi bi-crosshair"></i>
+                    <span>Battle Mode</span>
+                </a>
+
+                <a href="ai-tools.html">
+                    <i class="bi bi-robot"></i>
+                    <span>AI Tools</span>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+
+                <a href="semester.html">
+                    <i class="bi bi-journal-bookmark"></i>
+                    <span>Semester Wrapped</span>
+                </a>
+
+                <a href="reports.html">
+                    <i class="bi bi-bar-chart"></i>
+                    <span>Reports</span>
+                </a>
+
+                <a href="settings.html">
+                    <i class="bi bi-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <!-- Light Mode -->
+
+            <div class="mode-toggle">
+    <i class="bi bi-moon"></i>
+
+    <span id="modeText">Light Mode</span>
+
+    <div class="toggle" id="modeToggle">
+        <div class="toggle-circle"></div>
     </div>
 
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================
+             MAIN CONTENT
+        ================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================
+                 GRID 2 : TOPBAR
+            ================================== -->
+
+            <header class="topbar">
+
+                <!-- Search -->
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search students by name, roll no., branch..."
+                    >
+
+                    <i class="bi bi-sliders"></i>
+
+                </div>
+
+
+                <!-- Profile -->
+
+                <div class="profile">
+
+    <div class="notification">
+        <i class="bi bi-bell"></i>
+        <span>3</span>
+    </div>
+
+    <img
+        src="../files/assets/profile.png"
+        alt="Profile"
+    >
+
+    <div class="profile-details">
+        <strong id="profileName">User</strong>
+        <small id="profileRole">Student</small>
+    </div>
+
+    <i class="bi bi-chevron-down"></i>
+
+</div>
+
+            </header>
+
+
+
+            <!-- =================================
+                 GRID 3 : WELCOME + STATISTICS
+            ================================== -->
+
+            <section class="dashboard-intro">
+
+                <div class="welcome">
+
+    <h1>
+        Good Morning, <span id="welcomeName">User</span>! 👋
+    </h1>
+
+    <p>
+        Here's what's happening in your classroom today.
+    </p>
+
+</div>
+
+
+                <div class="dashboard-stats">
+
+
+                    <!-- Total Students -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            <i class="bi bi-people"></i>
+                        </div>
+
+                        <div class="stat-info">
+
+                            <p>Total Students</p>
+
+                            <h2>248</h2>
+
+                            <small>
+                                ↑ 12 this month
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Average CGPA -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon yellow">
+                            <i class="bi bi-star"></i>
+                        </div>
+
+                        <div class="stat-info">
+
+                            <p>Average CGPA</p>
+
+                            <h2>8.45</h2>
+
+                            <small>
+                                ↑ 0.32 this month
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Branches -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            <i class="bi bi-building"></i>
+                        </div>
+
+                        <div class="stat-info">
+
+                            <p>Branches</p>
+
+                            <h2>6</h2>
+
+                            <small>
+                                CSE, IT, AIML, ECE...
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Top Performers -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+
+                        <div class="stat-info">
+
+                            <p>Top Performers</p>
+
+                            <h2>32</h2>
+
+                            <small>
+                                Top 10% students
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 GRID 4 : RECENT STUDENTS + QUICK
+                 ACTIONS
+            ================================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- =========================
+                     RECENT STUDENTS
+                ========================== -->
+
+                <div class="recent-students card">
+
+                    <div class="card-header">
+
+                        <h2>Recent Students</h2>
+
+                        <a href="students.html">
+                            View All →
+                        </a>
+
+                    </div>
+
+
+                    <div class="student-table">
+
+                        <!-- Table Header -->
+
+                        <div class="student-row table-heading">
+
+                            <span>Student</span>
+                            <span>Roll No.</span>
+                            <span>Branch</span>
+                            <span>Semester</span>
+                            <span>CGPA</span>
+                            <span>Added On</span>
+
+                        </div>
+
+
+                        <!-- Student 1 -->
+
+                        <div class="student-row">
+
+                            <div class="student-name">
+
+                                <img
+                                    src="../files/assets/profile.png"
+                                    alt=""
+                                >
+
+                                <span>Arjun Mehta</span>
+
+                            </div>
+
+                            <span>22CS001</span>
+
+                            <span>CSE</span>
+
+                            <span>3rd Year</span>
+
+                            <strong>9.12</strong>
+
+                            <span>2 hrs ago</span>
+
+                        </div>
+
+
+                        <!-- Student 2 -->
+
+                        <div class="student-row">
+
+                            <div class="student-name">
+
+                                <img
+                                    src="../files/assets/profile.png"
+                                    alt=""
+                                >
+
+                                <span>Ishita Verma</span>
+
+                            </div>
+
+                            <span>22AIML021</span>
+
+                            <span>AIML</span>
+
+                            <span>2nd Year</span>
+
+                            <strong>8.78</strong>
+
+                            <span>5 hrs ago</span>
+
+                        </div>
+
+
+                        <!-- Student 3 -->
+
+                        <div class="student-row">
+
+                            <div class="student-name">
+
+                                <img
+                                    src="../files/assets/profile.png"
+                                    alt=""
+                                >
+
+                                <span>Rohan Singh</span>
+
+                            </div>
+
+                            <span>22IT010</span>
+
+                            <span>IT</span>
+
+                            <span>2nd Year</span>
+
+                            <strong>8.32</strong>
+
+                            <span>Yesterday</span>
+
+                        </div>
+
+
+                        <!-- Student 4 -->
+
+                        <div class="student-row">
+
+                            <div class="student-name">
+
+                                <img
+                                    src="../files/assets/profile.png"
+                                    alt=""
+                                >
+
+                                <span>Neha Patel</span>
+
+                            </div>
+
+                            <span>22ECE041</span>
+
+                            <span>ECE</span>
+
+                            <span>3rd Year</span>
+
+                            <strong>9.05</strong>
+
+                            <span>Yesterday</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     QUICK ACTIONS
+                ========================== -->
+
+                <div class="quick-actions card">
+
+                    <div class="card-header">
+
+                        <h2>Quick Actions</h2>
+
+                    </div>
+
+
+                    <div class="action-grid">
+
+                        <a href="add-student.html" class="action-card">
+
+                            <i class="bi bi-person-plus"></i>
+
+                            <span>Add Student</span>
+
+                        </a>
+
+
+                        <a href="import.html" class="action-card">
+
+                            <i class="bi bi-file-earmark-arrow-up"></i>
+
+                            <span>Import CSV</span>
+
+                        </a>
+
+
+                        <a href="battle.html" class="action-card">
+
+                            <i class="bi bi-crosshair"></i>
+
+                            <span>Battle Mode</span>
+
+                        </a>
+
+
+                        <a href="ai-tools.html" class="action-card">
+
+                            <i class="bi bi-people"></i>
+
+                            <span>AI Teammate Finder</span>
+
+                        </a>
+
+
+                        <a href="semester.html" class="action-card">
+
+                            <i class="bi bi-journal"></i>
+
+                            <span>Semester Wrapped</span>
+
+                        </a>
+
+
+                        <a href="#" class="action-card">
+
+                            <i class="bi bi-bullseye"></i>
+
+                            <span>Career Predictor</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 ACTIVITY FEED
+            ================================== -->
+
+            <section class="bottom-grid">
+
+
+                <div class="activity-feed card">
+
+                    <div class="card-header">
+
+                        <h2>Activity Feed</h2>
+
+                        <a href="#">
+                            View All →
+                        </a>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+
+                        <div class="activity">
+
+                            <i class="bi bi-person-check"></i>
+
+                            <p>
+                                <strong>Arjun Mehta</strong>
+                                updated skills
+                            </p>
+
+                            <span>2 mins ago</span>
+
+                        </div>
+
+
+                        <div class="activity">
+
+                            <i class="bi bi-file-earmark"></i>
+
+                            <p>
+                                <strong>Ishita Verma</strong>
+                                added a new project
+                            </p>
+
+                            <span>1 hr ago</span>
+
+                        </div>
+
+
+                        <div class="activity">
+
+                            <i class="bi bi-award"></i>
+
+                            <p>
+                                <strong>Rohan Singh</strong>
+                                earned a badge "Top Performer"
+                            </p>
+
+                            <span>3 hrs ago</span>
+
+                        </div>
+
+
+                        <div class="activity">
+
+                            <i class="bi bi-bar-chart"></i>
+
+                            <p>
+                                <strong>Neha Patel</strong>
+                                updated CGPA
+                            </p>
+
+                            <span>5 hrs ago</span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Quote / Illustration Area -->
+
+                <div class="dashboard-quote card">
+
+                    <h2>
+                        A good learning environment
+                        is the foundation for
+                        <span>a bright future.</span>
+                    </h2>
+
+                    <i class="bi bi-book"></i>
+
+                </div>
+
+            </section>
+
+        </main>
+</div>
+
+    </div>
+
+    <script src="../scripts/dashboard.js"></script>
 </body>
 
 </html>
