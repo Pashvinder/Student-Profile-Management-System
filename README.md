@@ -1,4 +1,4 @@
-# 🎓 EduProfile — Student Profile Management System
+# 🎓 Nodus — Student Profile Management System
 
 > *A student data platform that actually feels like a product.*
 
@@ -152,7 +152,7 @@ const students = JSON.parse(localStorage.getItem("students")) || []
 
 | Name | Role |
 |---|---|
-| Pashvinder Singh | Lead — Dashboard, Battle Mode, Auth |
+| Pashvinder | Lead — Dashboard, Battle Mode, Auth |
 | [Teammate 2] | Student CRUD, Search, Filter |
 | [Teammate 3] | Profile Page, Timeline, Badges |
 | [Teammate 4] | AI Features, Semester Wrapped, Export |
