@@ -4,62 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Students</title>
+
+    <title>Manage Students </title>
+
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&family=Caveat:wght@400..700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/add.css">
     <link rel="stylesheet" href="../style/edit.css">
-    <link rel="icon" type="image/x-icon" href="../files/assets/logo_whitebg.png">
 
+    <link rel="icon" type="image/x-icon" href="../files/assets/logo_whitebg.png">
 </head>
 
+
 <body>
+
     <div class="container">
 
-        <!-- *********
-        RIGHT SIDE
-        ********* -->
+        <!-- ═════════════════════════════════════
+             SIDEBAR
+        ══════════════════════════════════════ -->
+
         <div class="right">
 
+            <button onclick="addStudent()">Add Student</button>
+            <br>
 
-            <button onclick="addStudent()">Add Student</button><br>
             <button onclick="showEdit()">Edit Student</button>
-        </div>
-
-        <!-- *********
-        TOP
-        ********* -->
-        <div class="top">
 
         </div>
 
 
-        <!-- *********
-        main
-        ********* -->
+        <!-- ═════════════════════════════════════
+             TOP
+        ══════════════════════════════════════ -->
+
+        <div class="top"></div>
+
+
+        <!-- ═════════════════════════════════════
+             MAIN
+        ══════════════════════════════════════ -->
+
         <div class="main">
 
 
-            <!-- ////////////
-             ADD FORM
-             //////////// -->
+            <!-- ═════════════════════════════════════
+                 ADD STUDENT FORM
+            ══════════════════════════════════════ -->
+
             <form id="addForm">
 
-                <!-- ************************************BASIC************************************ -->
+                <!-- BASIC INFORMATION -->
+
                 <div class="basic">
+
                     <h1>Basic Information</h1>
-                    <label for="name">Full Name
+
+                    <label for="name">
+                        Full Name
                         <input type="text" name="name" id="name" placeholder="Enter full name" required>
                     </label>
 
 
+                    <label for="rollno">
+                        Roll Number
+                        <input type="text" name="rollno" id="rollno" placeholder="Enter roll number">
+                    </label>
 
-                    <label for="rollno"> Roll Number<input type="text" name="rollno" id="rollno"
-                            placeholder="Enter roll number"></label>
 
-                    <label for="enrollmentYear">Enrollment Year</label>
+                    <label for="enrollmentYear">
+                        Enrollment Year
+                    </label>
+
                     <select name="enrollmentYear" id="enrollmentYear">
-
                         <option value="2020">2020</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
@@ -69,20 +91,33 @@
                         <option value="2026">2026</option>
                     </select>
 
-                    <label for="imageInput">Select Image
-                        <input type="file" id="imageInput" accept="image/*" />
+
+                    <label for="imageInput">
+                        Select Image
+
+                        <input type="file" id="imageInput" accept="image/*">
                     </label>
+
                 </div>
 
 
-                <!-- ************************************PERSONAL************************************ -->
+                <!-- PERSONAL -->
 
                 <div class="personal">
+
                     <h1>Personal</h1>
-                    <label for="dob">D.O.B <input type="date" id="dob"></label>
 
 
-                    <label for="bloodGroup">Blood Group</label>
+                    <label for="dob">
+                        D.O.B
+                        <input type="date" id="dob">
+                    </label>
+
+
+                    <label for="bloodGroup">
+                        Blood Group
+                    </label>
+
                     <select id="bloodGroup" name="bloodGroup">
                         <option value="">Select Blood Group</option>
                         <option value="A+">A+</option>
@@ -96,21 +131,24 @@
                     </select>
 
 
+                    <label for="phone">
+                        Phone Number
 
-                    <label for="phone">Phone Number
                         <input type="tel" maxlength="10" inputmode="numeric" id="phone" pattern="[6-9][0-9]{9}"
                             placeholder="Enter 10-digit number" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                             required>
                     </label>
 
-                    <label for="personalEmail">Personal Email
+
+                    <label for="personalEmail">
+                        Personal Email
+
                         <input type="email" name="personalEmail" id="personalEmail" placeholder="Enter personal email">
                     </label>
 
 
-
-
                     <h4>Emergency Contacts</h4>
+
 
                     <select name="relationship" id="relationship">
                         <option value="father" selected>Father</option>
@@ -119,53 +157,89 @@
                         <option value="guardian">Guardian</option>
                     </select>
 
-                    <label for="nameEmergency">Name
+
+                    <label for="nameEmergency">
+                        Name
+
                         <input type="text" name="nameEmergency" id="nameEmergency" placeholder="Enter contact name">
                     </label>
 
 
-                    <label for="emergencyPhone">Phone Number
+                    <label for="emergencyPhone">
+                        Phone Number
+
                         <input type="tel" maxlength="10" inputmode="numeric" id="emergencyPhone" pattern="[6-9][0-9]{9}"
                             placeholder="Enter 10-digit number" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                             required>
                     </label>
+
                 </div>
 
-                <!-- ************************************Academics************************************ -->
+
+                <!-- ACADEMICS -->
+
                 <div class="academic">
+
                     <h1>Academics</h1>
 
-                    <label for="collegeEmail">College Email
+
+                    <label for="collegeEmail">
+                        College Email
+
                         <input type="email" name="collegeEmail" id="collegeEmail" placeholder="Enter college email">
                     </label>
 
 
-                    <label for="level">Program Level</label>
+                    <label for="level">
+                        Program Level
+                    </label>
+
                     <select id="level">
+
                         <option value="">Select Level</option>
                         <option value="UG">UG</option>
                         <option value="PG">PG</option>
                         <option value="PhD">PhD</option>
+
                     </select>
+
 
                     <br><br>
 
-                    <label for="subject">Subject</label>
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
                     <select id="subject">
+
                         <option value="">Select Subject</option>
+
                     </select>
+
 
                     <br><br>
 
-                    <label for="branch">Branch</label>
+
+                    <label for="branch">
+                        Branch
+                    </label>
+
                     <select id="branch">
+
                         <option value="">Select Branch</option>
+
                     </select>
 
 
-                    <label for="currentSem">Current Semester</label>
+                    <label for="currentSem">
+                        Current Semester
+                    </label>
+
                     <select id="currentSem" name="currentSem">
+
                         <option value="">Select Semester</option>
+
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -174,114 +248,342 @@
                         <option value="6">6</option>
                         <option value="7">7</option>
                         <option value="8">8</option>
+
                     </select>
 
-                    <label for="cgpa">CGPA
+
+                    <label for="cgpa">
+                        CGPA
+
                         <input type="text" id="cgpa" name="cgpa" min="0" max="10" step="0.01" placeholder="Enter CGPA">
                     </label>
+
                 </div>
 
 
-
-
-
-                <!-- ************************************CAREER************************************ -->
+                <!-- CAREER -->
 
                 <div class="career">
+
                     <h1>Career</h1>
 
-                    <label for="skills">Skills
+
+                    <label for="skills">
+                        Skills
+
                         <input type="text" name="skills" id="skills" placeholder="e.g. HTML, CSS, JavaScript">
                     </label>
 
-                    <label for="certifications">Certifications
+
+                    <label for="certifications">
+                        Certifications
+
                         <input type="text" name="certifications" id="certifications"
                             placeholder="e.g. AWS, Python, Google Analytics">
                     </label>
 
-                    <label for="internships">Internships
+
+                    <label for="internships">
+                        Internships
+
                         <input type="text" name="internships" id="internships"
                             placeholder="e.g. Web Development, Data Science">
                     </label>
 
-                    <label for="projects">Projects
+
+                    <label for="projects">
+                        Projects
+
                         <input type="text" name="projects" id="projects"
                             placeholder="e.g. Portfolio, E-Commerce Website">
                     </label>
 
-                    <label for="linkedin">LinkedIn URL
+
+                    <label for="linkedin">
+                        LinkedIn URL
+
                         <input type="url" name="linkedin" id="linkedin" placeholder="https://linkedin.com/in/username">
                     </label>
 
-                    <label for="github">GitHub URL
+
+                    <label for="github">
+                        GitHub URL
+
                         <input type="url" name="github" id="github" placeholder="https://github.com/username">
                     </label>
 
-                    <label for="resume">Resume Link
+
+                    <label for="resume">
+                        Resume Link
+
                         <input type="url" name="resume" id="resume" placeholder="https://example.com/resume">
                     </label>
 
-                    <label for="careerGoal">Career Goal / Interested Domain
+
+                    <label for="careerGoal">
+                        Career Goal / Interested Domain
+
                         <input type="text" name="careerGoal" id="careerGoal"
                             placeholder="e.g. Web Development, AI/ML, Cyber Security">
                     </label>
+
                 </div>
 
 
-                <!-- ************************************SOCIAL************************************ -->
+                <!-- SOCIAL / PERSONALITY -->
 
                 <div class="socialPersonality">
+
                     <h1>Social/Personality</h1>
 
-                    <label for="hobbies">Hobbies
+
+                    <label for="hobbies">
+                        Hobbies
+
                         <input type="text" name="hobbies" id="hobbies" placeholder="e.g. Reading, Gaming, Music">
                     </label>
 
-                    <label for="languages">Languages Known
+
+                    <label for="languages">
+                        Languages Known
+
                         <input type="text" name="languages" id="languages" placeholder="e.g. English, Hindi, French">
                     </label>
 
-                    <label for="achievements">Achievements/Awards
+
+                    <label for="achievements">
+                        Achievements/Awards
+
                         <input type="text" name="achievements" id="achievements"
                             placeholder="e.g. Hackathon Winner, Best Project">
                     </label>
 
-                    <label for="clubs">Club Memberships
+
+                    <label for="clubs">
+                        Club Memberships
+
                         <input type="text" name="clubs" id="clubs" placeholder="e.g. Coding Club, Sports Club">
                     </label>
 
-                    <label for="socialHandles">Social Handles
+
+                    <label for="socialHandles">
+                        Social Handles
+
                         <input type="text" name="socialHandles" id="socialHandles"
                             placeholder="e.g. Instagram, X, Discord">
                     </label>
+
+                </div>
+
+
+                <button type="submit" class="submit">
+                    Add Student
+                </button>
+
+            </form>
+
+
+
+            <!-- ═════════════════════════════════════
+                 EDIT STUDENT FORM
+            ══════════════════════════════════════ -->
+
+            <form id="editForm">
+
+
+                <!-- ROLL NUMBER SEARCH -->
+
+                <div class="search_wrap">
+
+                    <label class="search_label" for="rollNo">
+                        Enter Roll Number
+                    </label>
+
+
+                    <input type="text" id="rollNo" name="rollNo" maxlength="10" placeholder="0123456789"
+                        autocomplete="off">
+
+
+                    <p class="search_hint">
+                        Student details will appear automatically after 10 characters.
+                    </p>
+
+
+                    <p id="notFound" class="not_found">
+                        NO STUDENT FOUND
+                    </p>
+
                 </div>
 
 
 
+                <!-- OLD STUDENT DETAILS -->
+
+                <div class="dispOld" id="dispOld">
+
+                    <div class="old_card">
+
+                        <img id="old_image" src="" alt="Photo">
+
+                    </div>
 
 
-                <button type="submit" class="submit">Add Student</button>
+                    <div class="old_card">
+
+                        <span class="old_label">Name</span>
+
+                        <span class="old_value" id="old_name">—</span>
+
+                    </div>
+
+
+                    <div class="old_card">
+
+                        <span class="old_label">Phone
+                        </span>
+
+                        <span class="old_value" id="old_phone">
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="old_card">
+
+                        <span class="old_label">
+                            Personal Email
+                        </span>
+
+                        <span class="old_value" id="old_email">
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="old_card">
+
+                        <span class="old_label">
+                            CGPA
+                        </span>
+
+                        <span class="old_value" id="old_cgpa">
+                            —
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CHANGE DETAILS -->
+
+                <div class="editFields" id="editFields">
+
+                    <h2 class="edit_heading">
+                        Change Details
+                    </h2>
+
+
+                    <div class="edit_grid">
+
+
+                        <label class="field">
+
+                            <span>
+                                Change Name
+                            </span>
+
+                            <input type="text" id="newName" placeholder="Leave blank to keep current">
+
+                        </label>
+
+
+
+                        <label class="field">
+
+                            <span>
+                                Change Phone Number
+                            </span>
+
+                            <input type="tel" id="newPersonalNumber" maxlength="10"
+                                placeholder="Leave blank to keep current">
+
+                        </label>
+
+
+
+                        <label class="field">
+
+                            <span>
+                                Change Personal Email
+                            </span>
+
+                            <input type="email" id="newPersonalEmail" placeholder="Leave blank to keep current">
+
+                        </label>
+
+
+
+                        <label class="field">
+
+                            <span>
+                                Change CGPA
+                            </span>
+
+                            <input type="number" id="newCgpa" min="0" max="10" step="0.01"
+                                placeholder="Leave blank to keep current">
+
+                        </label>
+
+
+
+                        <label class="field full_width">
+
+                            <span>
+                                Change Profile Photo
+                            </span>
+
+                            <input type="file" id="newImageInput" accept="image/*">
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <div class="form_footer">
+
+                        <button type="button" class="btn_cancel" onclick="resetEdit()">
+                            Cancel
+                        </button>
+
+
+                        <button type="submit" class="btn_save">
+                            Update Student
+                        </button>
+
+                    </div>
+
+                </div>
+
             </form>
-
-
-            <!-- ////////////
-             EDIT FORM
-             //////////// -->
-            <form id="editForm">
-
-                <label for="name">
-                    <input type="text" name="name" id="name">
-                </label>
-            </form>
-
-
-
 
         </div>
+
     </div>
 
 
+
+    <!-- ═════════════════════════════════════
+         JAVASCRIPT
+    ══════════════════════════════════════ -->
+
     <script src="../scripts/manage.js"></script>
+    <script src="../scripts/edit.js"></script>
 
 </body>
 

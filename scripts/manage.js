@@ -120,7 +120,13 @@ subject.addEventListener("change", function () {
 // ************************************************
 
 function addStudent() {
+    editForm.style.display = "none";
     addForm.style.display = "grid";
+    
+}
+function showEdit() {
+    addForm.style.display = "none";
+    editForm.style.display = "grid";
 
 }
 
@@ -230,4 +236,153 @@ addForm.addEventListener("submit", function (event) {
         console.log("All Students:", AllStudent);
     }
 
+});
+
+
+
+// *********
+// EDIT FORM
+// **********
+
+var rollNoInput = document.getElementById("rollNo");
+var dispOld = document.getElementById("dispOld");
+var editFields = document.getElementById("editFields");
+var notFound = document.getElementById("notFound");
+var editForm = document.getElementById("editForm");
+
+/* old detail display elements */
+var old_image = document.getElementById("old_image");
+var old_name = document.getElementById("old_name");
+var old_phone = document.getElementById("old_phone");
+var old_email = document.getElementById("old_email");
+var old_cgpa = document.getElementById("old_cgpa");
+
+var foundStudent = null;
+var foundIndex = -1;
+
+
+rollNoInput.addEventListener("input", function () {
+
+    var typedRoll = rollNoInput.value.trim();
+
+    if (typedRoll.length < 10) {
+        hideForm();
+        return;  
+    }
+
+    searchStudent(typedRoll);
+});
+
+
+function searchStudent(rollNo) {
+
+    var allStudents = JSON.parse(localStorage.getItem("AllStudent")) || [];
+
+    foundIndex = -1;  
+    foundStudent = null;
+
+    for (var i = 0; i < allStudents.length; i++) {
+        if (allStudents[i].rollno === rollNo) { 
+            foundStudent = allStudents[i];
+            foundIndex = i;
+            break;  
+        }
+    }
+
+    if (foundStudent === null) {
+        hideForm();
+        notFound.style.display = "block";
+        return;
+    }
+
+    notFound.style.display = "none";
+    showOldDetails(foundStudent);
+}
+
+
+function showOldDetails(student) {
+
+
+    if (student.image && student.image !== "") {
+        old_image.src = student.image;
+        old_image.style.display = "block";
+    } else {
+        old_image.src = "";
+        old_image.style.display = "none";
+    }
+
+    old_name.textContent = student.name || "—";
+    old_phone.textContent = student.phone || "—";
+    old_email.textContent = student.personalEmail || "—";
+    old_cgpa.textContent = student.cgpa || "—";
+
+    dispOld.classList.add("visible");
+
+    editFields.classList.add("visible");
+}
+
+
+function hideForm() {
+    dispOld.classList.remove("visible");
+    editFields.classList.remove("visible");
+    notFound.style.display = "none";
+    foundStudent = null;
+    foundIndex = -1;
+}
+
+
+function resetEdit() {
+    rollNoInput.value = "";   
+    editForm.reset();         
+    hideForm();               
+}
+
+
+editForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();  
+
+    if (foundStudent === null || foundIndex === -1) {
+        alert("No student selected. Please enter a valid roll number.");
+        return;
+    }
+
+    var allStudents = JSON.parse(localStorage.getItem("AllStudent")) || [];
+
+    var newName = document.getElementById("newName").value.trim();
+    var newPhone = document.getElementById("newPersonalNumber").value.trim();
+    var newEmail = document.getElementById("newPersonalEmail").value.trim();
+    var newCgpa = document.getElementById("newCgpa").value.trim();
+    var newImage = document.getElementById("newImageInput");
+
+
+    if (newName !== "") allStudents[foundIndex].name = newName;
+    if (newPhone !== "") allStudents[foundIndex].phone = newPhone;
+    if (newEmail !== "") allStudents[foundIndex].personalEmail = newEmail;
+    if (newCgpa !== "") allStudents[foundIndex].cgpa = newCgpa;
+
+    if (newImage.files.length > 0) {
+
+        var reader = new FileReader();
+
+        reader.onload = function () {
+
+            allStudents[foundIndex].image = reader.result;
+            localStorage.setItem("AllStudent", JSON.stringify(allStudents));
+
+            console.log("Student updated with new image:", allStudents[foundIndex]);
+            alert(allStudents[foundIndex].name + " updated successfully!");
+            resetEdit();
+        };
+
+        reader.readAsDataURL(newImage.files[0]);
+
+    } else {
+
+        localStorage.setItem("AllStudent", JSON.stringify(allStudents));
+
+        console.log("Student updated:", allStudents[foundIndex]);
+        alert(allStudents[foundIndex].name + " updated successfully!");
+        resetEdit();
+    }
 });
