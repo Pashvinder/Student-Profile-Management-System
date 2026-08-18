@@ -1,0 +1,381 @@
+/* ═════════════════════════════════════
+   STUDENT TABLE
+═════════════════════════════════════ */
+
+#studentTableContainer {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+
+/* ═════════════════════════════════════
+   TABLE HEADER
+═════════════════════════════════════ */
+
+.table_header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.table_header h1 {
+    margin: 0;
+
+    color: #1a6f3e;
+
+    font-size: 1.8rem;
+}
+
+
+.table_header p {
+    margin: 5px 0 0;
+
+    color: #777;
+
+    font-size: 0.9rem;
+}
+
+
+/* Student count */
+
+.student_count {
+    padding: 8px 16px;
+
+    background: #e8f5e9;
+
+    color: #1a6f3e;
+
+    border: 1px solid #b7d8c2;
+
+    border-radius: 20px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+
+.student_count span {
+    font-weight: 700;
+}
+
+
+/* ═════════════════════════════════════
+   TABLE WRAPPER
+═════════════════════════════════════ */
+
+.table_wrapper {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+}
+
+
+/* ═════════════════════════════════════
+   TABLE
+═════════════════════════════════════ */
+
+#studentTable {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 750px;
+}
+
+
+/* Header */
+
+#studentTable thead {
+    background: #1a6f3e;
+
+    color: white;
+}
+
+
+#studentTable th {
+    padding: 14px 16px;
+
+    text-align: left;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* Body */
+
+#studentTable td {
+    padding: 13px 16px;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    color: #222;
+
+    font-size: 0.9rem;
+
+    vertical-align: middle;
+}
+
+
+/* Last row */
+
+#studentTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Hover */
+
+#studentTable tbody tr {
+    transition: background 0.15s;
+}
+
+
+#studentTable tbody tr:hover {
+    background: #f1f8f3;
+}
+
+
+/* ═════════════════════════════════════
+   STUDENT PHOTO
+═════════════════════════════════════ */
+
+.student_photo {
+    width: 45px;
+    height: 45px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid #1a6f3e;
+
+    background: #e8f5e9;
+
+    display: block;
+}
+
+
+/* Name */
+
+.student_name {
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* Roll number */
+
+.student_roll {
+    font-weight: 600;
+
+    color: #1a6f3e;
+}
+
+
+/* Branch */
+
+.student_branch {
+    color: #555;
+}
+
+
+/* Program level */
+
+.student_level {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    background: #e8f5e9;
+
+    color: #1a6f3e;
+
+    border-radius: 15px;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+}
+
+
+/* Phone */
+
+.student_phone {
+    color: #555;
+
+    white-space: nowrap;
+}
+
+
+/* ═════════════════════════════════════
+   EMPTY TABLE
+═════════════════════════════════════ */
+
+.empty_table {
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+.empty_icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f5e9;
+
+    border-radius: 50%;
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+}
+
+
+.empty_table h2 {
+    margin: 0;
+
+    color: #1a6f3e;
+
+    font-size: 1.3rem;
+}
+
+
+.empty_table p {
+    margin-top: 8px;
+
+    color: #777;
+
+    font-size: 0.9rem;
+}
+
+
+/* ═════════════════════════════════════
+   RESPONSIVE
+═════════════════════════════════════ */
+
+@media (max-width: 800px) {
+
+    #studentTableContainer {
+        padding: 20px 16px;
+    }
+
+
+    .table_header {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+
+
+    .table_header h1 {
+        font-size: 1.5rem;
+    }
+
+
+    #studentTable {
+        min-width: 700px;
+    }
+}
+
+
+/* ========================================
+   STUDENT NAME + MENU
+======================================== */
+
+.name_with_menu {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.student_menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.menu_button {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu_button:hover {
+    background: #e8f5e9;
+}
+
+/* ========================================
+   DROPDOWN
+======================================== */
+
+.student_dropdown {
+    display: none;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    min-width: 110px;
+    padding: 5px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+}
+
+.delete_option {
+    width: 100%;
+    padding: 10px 14px;
+    background: white;
+    color: #d32f2f;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.delete_option:hover {
+    background: #ffebee;
+}

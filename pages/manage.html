@@ -16,8 +16,11 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/add.css">
     <link rel="stylesheet" href="../style/edit.css">
+    <link rel="stylesheet" href="../style/studentList.css">
 
     <link rel="icon" type="image/x-icon" href="../files/assets/logo_whitebg.png">
+
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 
 
@@ -31,6 +34,7 @@
 
         <div class="right">
 
+            <button onclick="showList()">Show Student</button>
             <button onclick="addStudent()">Add Student</button>
             <br>
 
@@ -51,6 +55,72 @@
         ══════════════════════════════════════ -->
 
         <div class="main">
+
+            <!-- ═════════════════════════════════════
+                 STUDENT LIST
+            ══════════════════════════════════════ -->
+            <!-- ═════════════════════════════════════
+     STUDENT TABLE
+═════════════════════════════════════ -->
+
+            <div id="studentTableContainer">
+
+                <div class="table_header">
+
+                    <div>
+                        <h1>Students</h1>
+                        <p>All registered students</p>
+                    </div>
+
+                    <div class="student_count">
+                        <span id="studentCount">0</span>
+                        Students
+                    </div>
+
+                </div>
+
+
+                <div class="table_wrapper">
+
+                    <table id="studentTable">
+
+                        <thead>
+                            <tr>
+                                <th>Photo</th>
+                                <th>Name</th>
+                                <th>Roll No.</th>
+                                <th>CGPA</th>
+                                <th>Branch</th>
+                                <th>Program Level</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody id="studentTableBody"></tbody>
+
+                    </table>
+
+
+
+                    <div id="emptyTable" class="empty_table">
+
+                        <div class="empty_icon">
+                            
+                        </div>
+
+                        <h2>No Students Yet</h2>
+
+                        <p>
+                            Add a student to see them appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
 
             <!-- ═════════════════════════════════════
