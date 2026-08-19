@@ -262,30 +262,23 @@
 
     border: 1px solid #ccc;
     border-radius: 7px;
-
     cursor: pointer;
 }
 
 
 .btn_cancel:hover {
     color: #1a6f3e;
-
     border-color: #1a6f3e;
-
     background: #e8f5e9;
 }
 
 
 .btn_save {
     padding: 10px 30px;
-
     background: #1a6f3e;
-
     color: white;
-
     border: none;
     border-radius: 7px;
-
     cursor: pointer;
 }
 
@@ -295,9 +288,6 @@
 }
 
 
-/* ************************************
-   RESPONSIVE
-************************************ */
 
 @media (max-width: 800px) {
 

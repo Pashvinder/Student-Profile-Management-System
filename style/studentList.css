@@ -41,7 +41,6 @@
 }
 
 
-/* Student count */
 
 .student_count {
     padding: 8px 16px;
@@ -65,9 +64,7 @@
 }
 
 
-/* ═════════════════════════════════════
-   TABLE WRAPPER
-═════════════════════════════════════ */
+
 
 .table_wrapper {
     width: 100%;
@@ -81,10 +78,6 @@
     overflow-x: auto;
 }
 
-
-/* ═════════════════════════════════════
-   TABLE
-═════════════════════════════════════ */
 
 #studentTable {
     width: 100%;
@@ -280,9 +273,6 @@
 }
 
 
-/* ═════════════════════════════════════
-   RESPONSIVE
-═════════════════════════════════════ */
 
 @media (max-width: 800px) {
 
@@ -311,20 +301,17 @@
 }
 
 
-/* ========================================
-   STUDENT NAME + MENU
-======================================== */
-
+/* 
 .name_with_menu {
     display: flex;
     align-items: center;
     gap: 6px;
     position: relative;
     white-space: nowrap;
-}
+} */
 
 .student_menu {
-    position: relative;
+    position: absolute;
     display: flex;
     align-items: center;
 }
@@ -346,9 +333,6 @@
     background: #e8f5e9;
 }
 
-/* ========================================
-   DROPDOWN
-======================================== */
 
 .student_dropdown {
     display: none;

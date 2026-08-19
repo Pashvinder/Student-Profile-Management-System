@@ -219,35 +219,22 @@ addForm.addEventListener("submit", function (event) {
 
     let Student = {
 
-        // Basic Information
         name: document.getElementById("name").value,
         rollno: document.getElementById("rollno").value,
         enrollmentYear: document.getElementById("enrollmentYear").value,
-
-
-        // Personal
         dob: document.getElementById("dob").value,
         bloodGroup: document.getElementById("bloodGroup").value,
         phone: document.getElementById("phone").value,
         personalEmail: document.getElementById("personalEmail").value,
-
-
-        // Emergency Contact
         relationship: document.getElementById("relationship").value,
         nameEmergency: document.getElementById("nameEmergency").value,
         emergencyPhone: document.getElementById("emergencyPhone").value,
-
-
-        // Academics
         collegeEmail: document.getElementById("collegeEmail").value,
         level: document.getElementById("level").value,
         subject: document.getElementById("subject").value,
         branch: document.getElementById("branch").value,
         currentSem: document.getElementById("currentSem").value,
         cgpa: document.getElementById("cgpa").value,
-
-
-        // Career
         skills: document.getElementById("skills").value,
         certifications: document.getElementById("certifications").value,
         internships: document.getElementById("internships").value,
@@ -256,23 +243,14 @@ addForm.addEventListener("submit", function (event) {
         github: document.getElementById("github").value,
         resume: document.getElementById("resume").value,
         careerGoal: document.getElementById("careerGoal").value,
-
-
-        // Social
         hobbies: document.getElementById("hobbies").value,
         languages: document.getElementById("languages").value,
         achievements: document.getElementById("achievements").value,
         clubs: document.getElementById("clubs").value,
         socialHandles: document.getElementById("socialHandles").value,
-
-
-        // Image
         image: ""
 
     };
-
-
-    // Get existing students
     let AllStudent =
         JSON.parse(localStorage.getItem("AllStudent")) || [];
 
@@ -315,12 +293,6 @@ addForm.addEventListener("submit", function (event) {
         reader.readAsDataURL(imageInput.files[0]);
 
     }
-
-
-    // ========================================
-    // NO IMAGE
-    // ========================================
-
     else {
 
         AllStudent.push(Student);
@@ -332,7 +304,6 @@ addForm.addEventListener("submit", function (event) {
         );
 
 
-        // UPDATE TABLE
         renderStudents();
 
 
@@ -345,6 +316,9 @@ addForm.addEventListener("submit", function (event) {
     }
 
 });
+
+
+
 
 
 // ************************************************
@@ -460,10 +434,7 @@ function hideForm() {
     editFields.classList.remove("visible");
 
     notFound.style.display = "none";
-
-
     foundStudent = null;
-
     foundIndex = -1;
 
 }
@@ -471,11 +442,8 @@ function hideForm() {
 
 
 function resetEdit() {
-
     rollNoInput.value = "";
-
     editForm.reset();
-
     hideForm();
 
 }
@@ -525,7 +493,6 @@ editForm.addEventListener("submit", function (event) {
         document.getElementById("newImageInput");
 
 
-    // Update only fields that are not blank
 
     if (newName !== "") {
 
@@ -554,11 +521,6 @@ editForm.addEventListener("submit", function (event) {
 
     }
 
-
-    // ========================================
-    // NEW IMAGE
-    // ========================================
-
     if (newImage.files.length > 0) {
 
         let reader = new FileReader();
@@ -575,7 +537,6 @@ editForm.addEventListener("submit", function (event) {
             );
 
 
-            // UPDATE TABLE
             renderStudents();
 
 
@@ -599,11 +560,6 @@ editForm.addEventListener("submit", function (event) {
         reader.readAsDataURL(newImage.files[0]);
 
     }
-
-
-    // ========================================
-    // NO NEW IMAGE
-    // ========================================
 
     else {
 
@@ -670,10 +626,6 @@ function renderStudents() {
     studentCount.textContent = allStudents.length;
 
 
-    // ========================================
-    // NO STUDENTS
-    // ========================================
-
     if (allStudents.length === 0) {
 
         emptyTable.style.display = "flex";
@@ -683,7 +635,6 @@ function renderStudents() {
     }
 
 
-    // Students exist
 
     emptyTable.style.display = "none";
 
@@ -704,7 +655,7 @@ function renderStudents() {
 
                 <img
                     class="student_photo"
-                    src="${student.image || "../files/assets/logo_whitebg.png"}"
+                    src="${student.image || "../files/assets/default.png"}"
                     alt="Student Photo"
                 >
 
@@ -722,26 +673,10 @@ function renderStudents() {
 
                     <div class="student_menu">
 
-                        <button
-                            type="button"
-                            class="menu_button"
-                            onclick="toggleStudentMenu(${index})"
-                        >
-
-                            <lord-icon
-                                src="https://cdn.lordicon.com/xaafytty.json"
-                                trigger="hover"
-                                colors="primary:#1a6f3e"
-                                style="width:22px;height:22px">
-                            </lord-icon>
-
-                        </button>
+                       
 
 
-                        <div
-                            class="student_dropdown"
-                            id="menu-${index}"
-                        >
+                        <div class="student_dropdown" id="menu-${index}">
 
                             <button
                                 type="button"
@@ -802,6 +737,18 @@ function renderStudents() {
                 </span>
 
             </td>
+
+            <td>
+             <button
+                            type="button"
+                            class="menu_button"
+                            onclick="toggleStudentMenu(${index})"
+                        >
+
+                            <h1>...</h1>
+
+                        </button>
+                        </td
 
         `;
 
