@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Analysis</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&family=Caveat:wght@400..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/careerAnalysis.css">
+
+    <link rel="icon" type="image/x-icon" href="../files/assets/logo_whitebg.png">
+</head>
+
+<body>
+
+    <div class="careerContainer">
+
+        <!-- NAVBAR -->
+
+        <header class="header">
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="manage.html" id="navManage">Manage</a>
+                <a href="Printdetails.html">Studnet Detail</a>
+                <a href="developing.html">Report</a>
+                <a href="developing.html">SomeAnotherFeature</a>
+            </nav>
+
+        </header>
+
+
+        <!-- MAIN -->
+
+        <main class="careerBody">
+
+            <!-- SEARCH -->
+
+            <section class="searchBox">
+
+                <h1>Career Analysis</h1>
+
+                <p>
+                    Enter a student's roll number to generate
+                    a personalized career analysis.
+                </p>
+
+                <div class="searchArea">
+
+                    <input type="text" id="rollNumberInput" class="input_box" placeholder="Enter Roll Number">
+
+                    <button type="button" id="generateCareerBtn">
+                        Analyze Career
+                    </button>
+
+                </div>
+
+                <p id="careerError"></p>
+
+            </section>
+
+
+            <!-- LOADING -->
+
+            <section id="careerLoading" class="loadingBox">
+
+                <div class="loader"></div>
+
+                <p>
+                    Analyzing student's profile...
+                </p>
+
+            </section>
+
+
+            <!-- RESULT -->
+
+            <section id="careerResult" class="careerResult">
+
+
+                <!-- BEST CAREER -->
+
+                <div class="careerCard bestCareer">
+
+                    <span class="cardLabel">
+                        BEST CAREER
+                    </span>
+
+                    <h2 id="bestCareerTitle">
+                        —
+                    </h2>
+
+                    <p id="bestCareerDescription">
+                        —
+                    </p>
+
+                </div>
+
+
+                <!-- WHY -->
+
+                <div class="careerCard">
+
+                    <span class="cardLabel">
+                        WHY THIS CAREER
+                    </span>
+
+                    <p id="whyThisCareer">
+                        —
+                    </p>
+
+                </div>
+
+
+                <!-- COMPATIBILITY -->
+
+                <div class="careerCard compatibilityCard">
+
+                    <span class="cardLabel">
+                        CAREER COMPATIBILITY
+                    </span>
+
+                    <div id="careerScore" class="careerScore">
+                        0%
+                    </div>
+
+                    <p id="careerCompatibilityDescription">
+                        —
+                    </p>
+
+                </div>
+
+
+                <!-- ALTERNATIVES -->
+
+                <div class="careerCard">
+
+                    <span class="cardLabel">
+                        ALTERNATIVE CAREERS
+                    </span>
+
+                    <div class="alternativeGrid">
+
+                        <div class="alternative">
+
+                            <h3 id="alternativeCareer1Title">
+                                —
+                            </h3>
+
+                            <span id="alternativeCareer1Score">
+                                0%
+                            </span>
+
+                            <p id="alternativeCareer1Description">
+                                —
+                            </p>
+
+                        </div>
+
+
+                        <div class="alternative">
+
+                            <h3 id="alternativeCareer2Title">
+                                —
+                            </h3>
+
+                            <span id="alternativeCareer2Score">
+                                0%
+                            </span>
+
+                            <p id="alternativeCareer2Description">
+                                —
+                            </p>
+
+                        </div>
+
+
+                        <div class="alternative">
+
+                            <h3 id="alternativeCareer3Title">
+                                —
+                            </h3>
+
+                            <span id="alternativeCareer3Score">
+                                0%
+                            </span>
+
+                            <p id="alternativeCareer3Description">
+                                —
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACADEMIC -->
+
+                <div class="twoColumn">
+
+                    <div class="careerCard">
+
+                        <span class="cardLabel">
+                            ACADEMIC STRENGTHS
+                        </span>
+
+                        <p id="academicStrengths">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div class="careerCard">
+
+                        <span class="cardLabel">
+                            ACADEMIC WEAKNESSES
+                        </span>
+
+                        <p id="academicWeaknesses">
+                            —
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SKILLS -->
+
+                <div class="twoColumn">
+
+                    <div class="careerCard">
+
+                        <span class="cardLabel">
+                            SKILL PROFILE
+                        </span>
+
+                        <p id="skillProfile">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div class="careerCard">
+
+                        <span class="cardLabel">
+                            SKILL GAPS
+                        </span>
+
+                        <p id="skillGaps">
+                            —
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ROADMAP -->
+
+                <div class="careerCard">
+
+                    <span class="cardLabel">
+                        CAREER ROADMAP
+                    </span>
+
+                    <div class="roadmap">
+
+                        <div class="roadmapStep">
+
+                            <span>01</span>
+
+                            <div>
+
+                                <h3 id="roadmap1Title">
+                                    —
+                                </h3>
+
+                                <p id="roadmap1Description">
+                                    —
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="roadmapStep">
+
+                            <span>02</span>
+
+                            <div>
+
+                                <h3 id="roadmap2Title">
+                                    —
+                                </h3>
+
+                                <p id="roadmap2Description">
+                                    —
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="roadmapStep">
+
+                            <span>03</span>
+
+                            <div>
+
+                                <h3 id="roadmap3Title">
+                                    —
+                                </h3>
+
+                                <p id="roadmap3Description">
+                                    —
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RISK -->
+
+                <div class="careerCard riskCard">
+
+                    <span class="cardLabel">
+                        MAJOR RISK
+                    </span>
+
+                    <p id="majorRisk">
+                        —
+                    </p>
+
+                </div>
+
+
+                <!-- TIP -->
+
+                <div class="careerCard tipCard">
+
+                    <span class="cardLabel">
+                        TIP TO CONQUER
+                    </span>
+
+                    <h2 id="tipToConquer">
+                        —
+                    </h2>
+
+                </div>
+
+
+                <!-- NEXT ACTION -->
+
+                <div class="careerCard nextActionCard">
+
+                    <span class="cardLabel">
+                        NEXT ACTION
+                    </span>
+
+                    <p id="nextAction">
+                        —
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- DOODLES -->
+
+            <div class="career-doodles" aria-hidden="true">
+
+                <img src="../files/assets/doodle/flying_plane_bw.png" class="doodle plane" alt="">
+
+                <img src="../files/assets/doodle/book_bw.png" class="doodle book" alt="">
+
+                <img src="../files/assets/doodle/light_bulb_bw.png" class="doodle bulb" alt="">
+
+                <img src="../files/assets/doodle/formula_bw.png" class="doodle formula" alt="">
+
+                <img src="../files/assets/doodle/light_bulb.png" class="doodle clrBulb" alt="">
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../scripts/careerAnalysis.js"></script>
+
+</body>
+
+</html>
