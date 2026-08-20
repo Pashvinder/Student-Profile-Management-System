@@ -247,7 +247,7 @@ addForm.addEventListener("submit", function (event) {
         projects: document.getElementById("projects").value,
         linkedin: document.getElementById("linkedin").value,
         github: document.getElementById("github").value,
-        resume: document.getElementById("resume").value,
+        leetcode: document.getElementById("leetcode").value,
         careerGoal: document.getElementById("careerGoal").value,
         hobbies: document.getElementById("hobbies").value,
         languages: document.getElementById("languages").value,
@@ -691,17 +691,7 @@ function renderStudents() {
                        
 
 
-                        <div class="student_dropdown" id="menu-${index}">
-
-                            <button
-                                type="button"
-                                class="delete_option"
-                                onclick="deleteStudent(${index})"
-                            >
-                                Delete
-                            </button>
-
-                        </div>
+                        
 
                     </div>
 
@@ -753,29 +743,7 @@ function renderStudents() {
 
             </td>
 
-            <td>
-             <button
-                            type="button"
-                            class="menu_button"
-                            onclick="toggleStudentMenu(${index})"
-                        >
-
-                            <h1>...</h1>
-
-                        </button>
-                        </td
-
-            <td>
-             <button
-                            type="button"
-                            class="menu_button"
-                            onclick="toggleStudentMenu(${index})"
-                        >
-
-                            <h1>...</h1>
-
-                        </button>
-                        </td
+            
 
         `;
 
@@ -849,40 +817,8 @@ function deleteStudent(index) {
         JSON.parse(localStorage.getItem("AllStudent")) || [];
 
 
-    // Make sure student exists
-
-    if (!allStudents[index]) {
-
-        return;
-
-    }
 
 
-    const student =
-        allStudents[index];
-
-
-    // Confirmation
-
-    const confirmDelete = confirm(
-        "Are you sure you want to delete " +
-        student.name +
-        "?"
-    );
-
-
-    // User clicked Cancel
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    // Remove student from array
-
-    allStudents.splice(index, 1);
 
 
     // Update localStorage
@@ -944,7 +880,7 @@ const dispSocialHandles = document.getElementById("dispSocialHandles");
 
 const dispLinkedin = document.getElementById("dispLinkedin");
 const dispGithub = document.getElementById("dispGithub");
-const dispLeetcode = document.getElementById("dispResume");
+const dispLeetcode = document.getElementById("displeetcode");
 
 
 //   
@@ -1043,7 +979,7 @@ searchBar.addEventListener("input", function () {
 
     //   
     // PERSONAL DETAILS
-    //   
+    
 
     dispEnrollmentYear.textContent =
         student.enrollmentYear || "—";
@@ -1165,9 +1101,9 @@ searchBar.addEventListener("input", function () {
     }
 
 
-    if (student.resume && student.resume.trim() !== "") {
+    if (student.leetcode && student.resume.trim() !== "") {
 
-        dispResume.href = student.resume;
+        dispResume.href = student.leetcode;
         dispResume.style.display = "inline-flex";
 
     } else {

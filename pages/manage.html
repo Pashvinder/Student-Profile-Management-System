@@ -34,7 +34,7 @@
         ****************** -->
 
         <div class="right">
-
+            <img src="../files/assets/logo.png" alt="" height="10%">
             <button onclick="showList()">Show Student</button>
             <button onclick="addStudent()">Add Student</button>
             <br>
@@ -48,9 +48,9 @@
         <div class="top">
 
             <label for="search">
-                <input type="text" id="searchBar">
+                <input type="text" id="searchBar" placeholder="Search Student">
             </label>
-
+`
         </div>
 
 
@@ -77,15 +77,17 @@
                         <div class="studentLinks">
 
                             <a id="dispLinkedin" href="#" target="_blank">
-                                <i class="fa-brands fa-linkedin"></i>
+                                <img src="../files/assets/linkedin.png" alt="" class="connectLogo">
                             </a>
 
                             <a id="dispGithub" href="#" target="_blank">
-                                <i class="fa-brands fa-github"></i>
+                                <img src="../files/assets/github.png" alt="" class="connectLogo">
+
                             </a>
 
-                            <a id="disp" href="#" target="_blank">
-                                <i class="fa-solid fa-file-lines"></i>
+                            <a id="dispLeetcode" href="#" target="_blank">
+                                <img src="../files/assets/leetcode.png" alt="" class="connectLogo">
+
                             </a>
 
                         </div>
@@ -156,7 +158,6 @@
                                 <th>Branch</th>
                                 <th>Program Level</th>
                                 <th>Phone</th>
-                                <th>Delete</th>
                             </tr>
                         </thead>
 
@@ -420,7 +421,7 @@
                     </label>
 
 
-                    <label for="resume">LeetCode URL<input type="url" name="resume" id="resume"
+                    <label for="leetcode">LeetCode URL<input type="url" name="resume" id="leetcode"
                             placeholder="https://example.com/username" required>
                     </label>
 
@@ -485,13 +486,9 @@
 
                 <div class="search_wrap">
 
-                    <label class="search_label" for="rollNo">
-                        Enter Roll Number
-                    </label>
-
-
-                    <input type="text" id="rollNo" name="rollNo" maxlength="10" placeholder="0123456789"
-                        autocomplete="off">
+                    <label class="search_label" for="rollNo">Enter Roll Number
+                        <input type="text" id="rollNo" name="rollNo" maxlength="10" placeholder="0123456789"
+                            autocomplete="off"></label>
 
 
                     <p class="search_hint">
