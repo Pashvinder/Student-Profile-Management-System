@@ -1,4 +1,4 @@
-const GROQ_API_KEY = "";
+const GROQ_API_KEY = "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";
 
 const GROQ_URL =
     "https://api.groq.com/openai/v1/chat/completions";
@@ -481,7 +481,7 @@ async function generateCareerAnalysis() {
         console.log(
             "===================================="
         );
-
+        
         displayCareerAnalysis(analysis);
 
         result.style.display = "flex";
