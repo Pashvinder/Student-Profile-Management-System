@@ -1,0 +1,131 @@
+.displayDetails {
+    display: none;
+
+    width: 90%;
+    box-sizing: border-box;
+    padding: 40px 5%;
+    border: 3px solid #008200;
+    border-radius: 10px;
+    
+    
+}
+
+.displayDetails.active {
+    display: block;
+}
+
+.displayDetailsBelow h3 {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ── Top Section ── */
+.displayDetailsTop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 30px;
+}
+
+
+.displayDetailsTop img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#dispName {
+    text-decoration: underline #008200;
+    margin: 5px 0;
+}
+
+#dispRollNo {
+    color: #008200;
+    margin: 0;
+}
+
+#dispCurrentSem {
+    margin: 0;
+    font-weight: 600;
+}
+
+.studentLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.studentLinks a {
+    color: rgba(0, 130, 0, 0.45);
+    font-size: 28px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.studentLinks a:hover {
+    color: #008200;
+    transform: scale(1.1);
+}
+
+/* ── Below Grid ── */
+.displayDetailsBelow {
+    
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px 50px;
+    align-items: start;
+    width: 100%;
+}
+
+.displayDetailsBelow h3 {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.displayDetailsBelow h3 span {
+    font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1000px) {
+    .displayDetails {
+        padding: 35px 4%;
+    }
+
+    .displayDetailsBelow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .displayDetails {
+        padding: 25px 20px;
+    }
+
+    .displayDetailsTop img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .displayDetailsBelow {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .displayDetailsBelow h3 {
+        font-size: 16px;
+    }
+}
