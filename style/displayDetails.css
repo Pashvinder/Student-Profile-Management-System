@@ -133,12 +133,172 @@
     }
 }
 
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 2rem;
+}
+
 #searchBar {
-    font-size: large;
+    border: none;
+    font-size: medium;
     text-align: center;
-    border: 1px solid green;
+    outline: 1px solid #0082008e;
     border-radius: 10px;
     height: 2rem;
-    width: 20rem;
+    width: 15rem;
+    transition: width 0.25s ease-in-out;
 
+}
+
+#searchBar:focus{
+    outline: px solid #008200 ;
+    width: 20rem;
+    
+}
+#searchBar:focus::placeholder{
+    color:transparent
+    
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.actionBtn{
+    cursor: pointer;
+    color: white;
+    height: 2rem;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.500);
+    width: 90%;
+
+}
+
+
+
+
+.right {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Exact animation area */
+.right .doodle-bg {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+/* Doodles */
+.right .fall-doodle {
+    position: absolute !important;
+
+    width: 50px !important;
+    height: 50px !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain;
+
+    opacity: 0.08;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    animation-name: fallingDoodle;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Starting positions */
+
+.right .d1 {
+    left: 10%;
+    top: -70px;
+    animation-delay: 0s;
+}
+
+.right .d2 {
+    left: 75%;
+    top: -70px;
+    animation-delay: -3.5s;
+}
+
+.right .d3 {
+    left: 40%;
+    top: -70px;
+    animation-delay: -7s;
+}
+
+.right .d4 {
+    left: 85%;
+    top: -70px;
+    animation-delay: -10.5s;
+}
+
+.right .d5 {
+    left: 20%;
+    top: -70px;
+    animation-delay: -14s;
+}
+
+.right .d6 {
+    left: 60%;
+    top: -70px;
+    animation-delay: -17.5s;
+}
+
+
+/* =========================================
+   TOP → BOTTOM
+========================================= */
+
+@keyframes fallingDoodle {
+
+    0% {
+        top: -70px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.08;
+    }
+
+    90% {
+        opacity: 0.08;
+    }
+
+    100% {
+        top: calc(100% + 70px);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   CONTENT ABOVE DOODLES
+========================================= */
+
+.right > *:not(.doodle-bg) {
+    position: relative;
+    z-index: 2999;
 }
