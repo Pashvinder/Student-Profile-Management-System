@@ -1,3 +1,18 @@
+
+const currentUser = localStorage.getItem("currentUser");
+
+if (!currentUser) {
+    window.location.replace("unauthorise.html");
+}
+else {
+    const user = JSON.parse(currentUser);
+
+    if (user.role !== "admin") {
+        window.location.replace("unauthorise.html");
+    }
+}
+
+
 let level = document.getElementById("level");
 let subject = document.getElementById("subject");
 let branch = document.getElementById("branch");

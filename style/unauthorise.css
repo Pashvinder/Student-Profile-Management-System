@@ -1,0 +1,231 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Teachers", sans-serif;
+
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.50),
+            rgba(255, 255, 255, 0.50)),
+        url("../files/assets/page_bg.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.unauthoriseContainer {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.unauthoriseBody {
+    min-height: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.unauthoriseBox {
+    width: 35vw;
+    min-width: 350px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background-color: rgba(250, 247, 247, 0.342);
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.582);
+
+    border-radius: 2vh;
+
+    position: relative;
+    z-index: 20;
+}
+
+.unauthoriseBox h1 {
+    margin: 0 0 15px 0;
+
+    font-size: 35px;
+}
+
+.unauthoriseBox p {
+    margin: 0 0 25px 0;
+
+    font-size: 18px;
+}
+
+.backButton {
+    display: inline-block;
+    color: red;
+    background-color: #1a6f3dc5;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.backButton:hover {
+    background-color: #1a6f3e;
+}
+
+
+/* DOODLES */
+
+.doodle {
+    position: absolute;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation: doodleFloat 20s linear infinite;
+}
+
+.book {
+    left: 20%;
+    bottom: 5%;
+
+    width: 20vw;
+
+    transform: rotate(10deg);
+}
+
+.plane {
+    left: 1%;
+    top: 5%;
+
+    width: 25vw;
+}
+
+.bulb {
+    left: -1%;
+    top: 50%;
+
+    width: 15vw;
+
+    transform: rotate(-20deg);
+}
+
+.formula {
+    right: 2%;
+    bottom: 20%;
+
+    width: 30vw;
+
+    transform: rotate(-15deg);
+}
+
+.clrBulb {
+    right: 15%;
+    bottom: 5%;
+
+    width: 25vw;
+
+    transform: rotate(-15deg);
+}
+
+
+
+@keyframes doodleFloat {
+
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    15% {
+        transform: translateY(-4px) rotate(2deg);
+    }
+
+    30% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+
+    45% {
+        transform: translateY(-14px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(0deg);
+    }
+
+    60% {
+        transform: translateY(-14px) rotate(-2deg);
+    }
+
+    75% {
+        transform: translateY(-8px) rotate(-5deg);
+    }
+
+    90% {
+        transform: translateY(-3px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+
+
+@media (max-width: 900px) {
+
+    .unauthoriseBox {
+        width: 75vw;
+        min-width: 0;
+    }
+
+    .book {
+        width: 55px;
+    }
+
+    .plane {
+        width: 70px;
+    }
+
+    .bulb {
+        width: 50px;
+    }
+
+    .formula {
+        width: 80px;
+    }
+
+    .clrBulb {
+        width: 80px;
+    }
+}
