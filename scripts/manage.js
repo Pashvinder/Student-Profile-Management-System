@@ -32,9 +32,11 @@ let foundStudent = null;
 let foundIndex = -1;
 
 
-// ************************************************
+
+
+//   
 // BRANCH
-// ************************************************
+//   
 
 level.addEventListener("change", function () {
 
@@ -164,50 +166,54 @@ subject.addEventListener("change", function () {
 });
 
 
-// ************************************************
+//   
 // PAGE NAVIGATION
-// ************************************************
+//   
+let displayDetails = document.querySelector(".displayDetails");
 
 function showList() {
 
-    editForm.style.display = "none";
+    displayDetails.style.display = "none";
 
-    studentTableContainer.style.display = "grid";
-
-    addForm.style.display = "none";
-
-    renderStudents();
-
+    if (studentTableContainer.style.display === "grid") {
+        studentTableContainer.style.display = "none";
+    } else {
+        editForm.style.display = "none";
+        addForm.style.display = "none";
+        studentTableContainer.style.display = "grid";
+        renderStudents();
+    }
 }
-
-
 
 function addStudent() {
 
-    editForm.style.display = "none";
+    displayDetails.style.display = "none";
 
-    studentTableContainer.style.display = "none";
-
-    addForm.style.display = "grid";
-
+    if (addForm.style.display === "grid") {
+        addForm.style.display = "none";
+    } else {
+        editForm.style.display = "none";
+        studentTableContainer.style.display = "none";
+        addForm.style.display = "grid";
+    }
 }
-
-
 
 function showEdit() {
 
-    studentTableContainer.style.display = "none";
+    displayDetails.style.display = "none";
 
-    addForm.style.display = "none";
-
-    editForm.style.display = "grid";
-
+    if (editForm.style.display === "grid") {
+        editForm.style.display = "none";
+    } else {
+        studentTableContainer.style.display = "none";
+        addForm.style.display = "none";
+        editForm.style.display = "grid";
+    }
 }
 
-
-// ************************************************
+//   
 // ADD STUDENT
-// ************************************************
+//   
 
 addForm.addEventListener("submit", function (event) {
 
@@ -283,7 +289,8 @@ addForm.addEventListener("submit", function (event) {
 
             addForm.reset();
 
-
+            let name = document.getElementById("name").value
+            alert(`${name} Added to the List`)
             console.log("Student Added:", Student);
             console.log("All Students:", AllStudent);
 
@@ -321,9 +328,12 @@ addForm.addEventListener("submit", function (event) {
 
 
 
-// ************************************************
+
+
+
+//   
 // EDIT FORM
-// ************************************************
+//   
 
 
 rollNoInput.addEventListener("input", function () {
@@ -449,9 +459,9 @@ function resetEdit() {
 }
 
 
-// ************************************************
+//   
 // UPDATE STUDENT
-// ************************************************
+//   
 
 editForm.addEventListener("submit", function (event) {
 
@@ -592,9 +602,9 @@ editForm.addEventListener("submit", function (event) {
 });
 
 
-// ************************************************
+//   
 // STUDENT TABLE
-// ************************************************
+//   
 
 function renderStudents() {
 
@@ -656,6 +666,7 @@ function renderStudents() {
                 <img
                     class="student_photo"
                     src="${student.image || "../files/assets/default.png"}"
+                    src="${student.image || "../files/assets/default.png"}"
                     alt="Student Photo"
                 >
 
@@ -673,6 +684,10 @@ function renderStudents() {
 
                     <div class="student_menu">
 
+                       
+
+
+                        <div class="student_dropdown" id="menu-${index}">
                        
 
 
@@ -750,6 +765,18 @@ function renderStudents() {
                         </button>
                         </td
 
+            <td>
+             <button
+                            type="button"
+                            class="menu_button"
+                            onclick="toggleStudentMenu(${index})"
+                        >
+
+                            <h1>...</h1>
+
+                        </button>
+                        </td
+
         `;
 
 
@@ -760,9 +787,8 @@ function renderStudents() {
 }
 
 
-// ************************************************
 // TABLE LOAD
-// ************************************************
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -771,9 +797,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ************************************************
+// 
 // THREE DOT MENU
-// ************************************************
+// 
 
 function toggleStudentMenu(index) {
 
@@ -813,9 +839,9 @@ function toggleStudentMenu(index) {
 }
 
 
-// ************************************************
+//   
 // DELETE STUDENT
-// ************************************************
+//   
 
 function deleteStudent(index) {
 
@@ -872,3 +898,283 @@ function deleteStudent(index) {
     renderStudents();
 
 }
+
+
+
+
+// SEARCH BAR
+// 
+
+const searchBar = document.getElementById("searchBar");
+
+const displayDetailsBox = document.querySelector(".displayDetails");
+
+const dispImage = document.getElementById("dispImage");
+const dispName = document.getElementById("dispName");
+const dispRollNo = document.getElementById("dispRollNo");
+const dispCurrentSem = document.getElementById("dispCurrentSem");
+
+const dispEnrollmentYear = document.getElementById("dispEnrollmentYear");
+const dispDOB = document.getElementById("dispDOB");
+const dispBloodGroup = document.getElementById("dispBloodGroup");
+const dispPhone = document.getElementById("dispPhone");
+const dispPersonalEmail = document.getElementById("dispPersonalEmail");
+
+const dispNameEmergency = document.getElementById("dispNameEmergency");
+const dispRelationship = document.getElementById("dispRelationship");
+const dispEmergencyPhone = document.getElementById("dispEmergencyPhone");
+
+const dispCollegeEmail = document.getElementById("dispCollegeEmail");
+const dispLevel = document.getElementById("dispLevel");
+const dispSubject = document.getElementById("dispSubject");
+const dispBranch = document.getElementById("dispBranch");
+const dispCGPA = document.getElementById("dispCGPA");
+
+const dispSkills = document.getElementById("dispSkills");
+const dispCertifications = document.getElementById("dispCertifications");
+const dispInternships = document.getElementById("dispInternships");
+const dispProjects = document.getElementById("dispProjects");
+
+const dispCareerGoal = document.getElementById("dispCareerGoal");
+const dispHobbies = document.getElementById("dispHobbies");
+const dispLanguages = document.getElementById("dispLanguages");
+const dispAchievements = document.getElementById("dispAchievements");
+const dispClubs = document.getElementById("dispClubs");
+const dispSocialHandles = document.getElementById("dispSocialHandles");
+
+const dispLinkedin = document.getElementById("dispLinkedin");
+const dispGithub = document.getElementById("dispGithub");
+const dispLeetcode = document.getElementById("dispResume");
+
+
+//   
+// SEARCH INPUT
+//   
+
+searchBar.addEventListener("input", function () {
+
+    const typedRoll = searchBar.value.trim();
+
+    // Remove anything except numbers
+    searchBar.value = searchBar.value.replace(/\D/g, "");
+
+    // If search is empty
+    if (typedRoll === "") {
+
+        displayDetailsBox.style.display = "none";
+
+        // Show table again
+        studentTableContainer.style.display = "grid";
+
+        renderStudents();
+
+        return;
+    }
+
+
+    // Only search when 10 digit roll number is entered
+    if (typedRoll.length < 10) {
+        return;
+    }
+
+
+    // Get students from localStorage
+    const allStudents =
+        JSON.parse(localStorage.getItem("AllStudent")) || [];
+
+
+    // Find student by roll number
+    const student = allStudents.find(function (item) {
+
+        return String(item.rollno).trim() === typedRoll;
+
+    });
+
+
+    //   
+    // STUDENT NOT FOUND
+    //   
+
+    if (!student) {
+
+        displayDetailsBox.style.display = "none";
+
+        studentTableContainer.style.display = "none";
+
+        alert("No student found with Roll Number: " + typedRoll);
+
+        return;
+    }
+
+
+    //   
+    // STUDENT FOUND
+    //   
+
+    // Hide table
+    studentTableContainer.style.display = "none";
+
+    // Hide add form
+    addForm.style.display = "none";
+
+    // Hide edit form
+    editForm.style.display = "none";
+
+    // Show details
+    displayDetailsBox.style.display = "flex";
+
+
+    //   
+    // BASIC INFORMATION
+    //   
+
+    dispImage.src =
+        student.image && student.image !== ""
+            ? student.image
+            : "../files/assets/default.png";
+
+    dispName.textContent = student.name || "—";
+
+    dispRollNo.textContent = student.rollno || "—";
+
+    dispCurrentSem.textContent =
+        "Semester: " + (student.currentSem || "—");
+
+
+    //   
+    // PERSONAL DETAILS
+    //   
+
+    dispEnrollmentYear.textContent =
+        student.enrollmentYear || "—";
+
+    dispDOB.textContent =
+        student.dob || "—";
+
+    dispBloodGroup.textContent =
+        student.bloodGroup || "—";
+
+    dispPhone.textContent =
+        student.phone || "—";
+
+    dispPersonalEmail.textContent =
+        student.personalEmail || "—";
+
+
+    // 
+    // EMERGENCY CONTACT
+    // 
+
+    dispNameEmergency.textContent =
+        student.nameEmergency || "—";
+
+    dispRelationship.textContent =
+        student.relationship || "—";
+
+    dispEmergencyPhone.textContent =
+        student.emergencyPhone || "—";
+
+
+    // 
+    // ACADEMICS
+    // 
+
+    dispCollegeEmail.textContent =
+        student.collegeEmail || "—";
+
+    dispLevel.textContent =
+        student.level || "—";
+
+    dispSubject.textContent =
+        student.subject || "—";
+
+    dispBranch.textContent =
+        student.branch || "—";
+
+    dispCGPA.textContent =
+        student.cgpa || "—";
+
+
+    //   
+    // CAREER
+    //   
+
+    dispSkills.textContent =
+        student.skills || "—";
+
+    dispCertifications.textContent =
+        student.certifications || "—";
+
+    dispInternships.textContent =
+        student.internships || "—";
+
+    dispProjects.textContent =
+        student.projects || "—";
+
+
+    //   
+    // SOCIAL / PERSONALITY
+    //   
+
+    dispCareerGoal.textContent =
+        student.careerGoal || "—";
+
+    dispHobbies.textContent =
+        student.hobbies || "—";
+
+    dispLanguages.textContent =
+        student.languages || "—";
+
+    dispAchievements.textContent =
+        student.achievements || "—";
+
+    dispClubs.textContent =
+        student.clubs || "—";
+
+    dispSocialHandles.textContent =
+        student.socialHandles || "—";
+
+
+    //   
+    // SOCIAL LINKS
+    //   
+
+    if (student.linkedin && student.linkedin.trim() !== "") {
+
+        dispLinkedin.href = student.linkedin;
+        dispLinkedin.style.display = "inline-flex";
+
+    } else {
+
+        dispLinkedin.href = "#";
+        dispLinkedin.style.display = "none";
+
+    }
+
+
+    if (student.github && student.github.trim() !== "") {
+
+        dispGithub.href = student.github;
+        dispGithub.style.display = "inline-flex";
+
+    } else {
+
+        dispGithub.href = "#";
+        dispGithub.style.display = "none";
+
+    }
+
+
+    if (student.resume && student.resume.trim() !== "") {
+
+        dispResume.href = student.resume;
+        dispResume.style.display = "inline-flex";
+
+    } else {
+
+        dispResume.href = "#";
+        dispResume.style.display = "none";
+
+    }
+
+});

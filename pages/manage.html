@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../style/add.css">
     <link rel="stylesheet" href="../style/edit.css">
     <link rel="stylesheet" href="../style/studentList.css">
+    <link rel="stylesheet" href="../style/displayDetails.css">
 
     <link rel="icon" type="image/x-icon" href="../files/assets/logo_whitebg.png">
 
@@ -44,13 +45,85 @@
 
 
 
-        <div class="top"></div>
+        <div class="top">
+
+            <label for="search">
+                <input type="text" id="searchBar">
+            </label>
+
+        </div>
 
 
 
 
         <div class="main">
 
+
+
+
+            <center>
+                <div class="displayDetails">
+
+                    <div class="displayDetailsTop">
+
+                        <img id="dispImage" src="../files/assets/default.png" alt="profilePicture">
+
+                        <h2 id="dispName">name</h2>
+
+                        <p id="dispRollNo">2510992921</p>
+
+                        <p id="dispCurrentSem">Semester: 5</p>
+
+                        <div class="studentLinks">
+
+                            <a id="dispLinkedin" href="#" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+
+                            <a id="dispGithub" href="#" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+
+                            <a id="disp" href="#" target="_blank">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </a>
+
+                        </div>
+                        <div class="displayDetailsBelow">
+                            <h3>Enrollment Year: <span id="dispEnrollmentYear">—</span></h3>
+                            <h3>Date of Birth: <span id="dispDOB">—</span></h3>
+                            <h3>Blood Group: <span id="dispBloodGroup">—</span></h3>
+                            <h3>Phone No: <span id="dispPhone">—</span></h3>
+                            <h3>Personal Email: <span id="dispPersonalEmail">—</span></h3>
+
+                            <h3>Emergency Contact Name: <span id="dispNameEmergency">—</span></h3>
+                            <h3>Relationship: <span id="dispRelationship">—</span></h3>
+                            <h3>Emergency Phone: <span id="dispEmergencyPhone">—</span></h3>
+
+                            <h3>College Email: <span id="dispCollegeEmail">—</span></h3>
+                            <h3>Level: <span id="dispLevel">—</span></h3>
+                            <h3>Subject: <span id="dispSubject">—</span></h3>
+                            <h3>Branch: <span id="dispBranch">—</span></h3>
+                            <h3>CGPA: <span id="dispCGPA">—</span></h3>
+
+                            <h3>Skills: <span id="dispSkills">—</span></h3>
+                            <h3>Certifications: <span id="dispCertifications">—</span></h3>
+                            <h3>Internships: <span id="dispInternships">—</span></h3>
+                            <h3>Projects: <span id="dispProjects">—</span></h3>
+
+                            <h3>Career Goal: <span id="dispCareerGoal">—</span></h3>
+                            <h3>Hobbies: <span id="dispHobbies">—</span></h3>
+                            <h3>Languages: <span id="dispLanguages">—</span></h3>
+                            <h3>Achievements: <span id="dispAchievements">—</span></h3>
+                            <h3>Clubs: <span id="dispClubs">—</span></h3>
+                            <h3>Social Handles: <span id="dispSocialHandles">—</span></h3>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </center>
             <!-- STUDENT LIST-->
 
             <div id="studentTableContainer">
@@ -134,11 +207,11 @@
 
                     <label for="rollno">
                         Roll Number
-                        <input type="text" name="rollno" id="rollno" placeholder="Enter roll number">
+                        <input type="text" name="rollno" id="rollno" placeholder="Enter roll number" required>
                     </label>
 
 
-                    <label for="enrollmentYear">
+                    <label for="enrollmentYear" required>
                         Enrollment Year
                     </label>
 
@@ -156,7 +229,7 @@
                     <label for="imageInput">
                         Select Image
 
-                        <input type="file" id="imageInput" accept="image/*">
+                        <input type="file" id="imageInput" accept="image/*" required>
                     </label>
 
                 </div>
@@ -171,7 +244,7 @@
 
                     <label for="dob">
                         D.O.B
-                        <input type="date" id="dob">
+                        <input type="date" id="dob" required>
                     </label>
 
 
@@ -179,7 +252,7 @@
                         Blood Group
                     </label>
 
-                    <select id="bloodGroup" name="bloodGroup">
+                    <select id="bloodGroup" name="bloodGroup" required>
                         <option value="">Select Blood Group</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
@@ -194,7 +267,6 @@
 
                     <label for="phone">
                         Phone Number
-
                         <input type="tel" maxlength="10" inputmode="numeric" id="phone" pattern="[6-9][0-9]{9}"
                             placeholder="Enter 10-digit number" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                             required>
@@ -203,15 +275,13 @@
 
                     <label for="personalEmail">
                         Personal Email
-
-                        <input type="email" name="personalEmail" id="personalEmail" placeholder="Enter personal email">
+                        <input type="email" name="personalEmail" id="personalEmail" placeholder="Enter personal email"
+                            required>
                     </label>
 
 
                     <h4>Emergency Contacts</h4>
-
-
-                    <select name="relationship" id="relationship">
+                    <select name="relationship" id="relationship" required>
                         <option value="father" selected>Father</option>
                         <option value="mother">Mother</option>
                         <option value="sibling">Sibling</option>
@@ -221,14 +291,13 @@
 
                     <label for="nameEmergency">
                         Name
-
-                        <input type="text" name="nameEmergency" id="nameEmergency" placeholder="Enter contact name">
+                        <input type="text" name="nameEmergency" id="nameEmergency" placeholder="Enter contact name"
+                            required>
                     </label>
 
 
                     <label for="emergencyPhone">
                         Phone Number
-
                         <input type="tel" maxlength="10" inputmode="numeric" id="emergencyPhone" pattern="[6-9][0-9]{9}"
                             placeholder="Enter 10-digit number" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                             required>
@@ -247,7 +316,8 @@
                     <label for="collegeEmail">
                         College Email
 
-                        <input type="email" name="collegeEmail" id="collegeEmail" placeholder="Enter college email">
+                        <input type="email" name="collegeEmail" id="collegeEmail" placeholder="Enter college email"
+                            required>
                     </label>
 
 
@@ -255,8 +325,7 @@
                         Program Level
                     </label>
 
-                    <select id="level">
-
+                    <select id="level" required>
                         <option value="">Select Level</option>
                         <option value="UG">UG</option>
                         <option value="PG">PG</option>
@@ -272,35 +341,26 @@
                         Subject
                     </label>
 
-                    <select id="subject">
-
+                    <select id="subject" required>
                         <option value="">Select Subject</option>
-
                     </select>
 
 
                     <br><br>
 
 
-                    <label for="branch">
-                        Branch
-                    </label>
-
-                    <select id="branch">
-
+                    <label for="branch">Branch</label>
+                    <select id="branch" required>
                         <option value="">Select Branch</option>
 
                     </select>
 
 
-                    <label for="currentSem">
-                        Current Semester
-                    </label>
+                    <label for="currentSem">Current Semester</label>
 
-                    <select id="currentSem" name="currentSem">
+                    <select id="currentSem" name="currentSem" required>
 
                         <option value="">Select Semester</option>
-
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -313,10 +373,9 @@
                     </select>
 
 
-                    <label for="cgpa">
-                        CGPA
-
-                        <input type="text" id="cgpa" name="cgpa" min="0" max="10" step="0.01" placeholder="Enter CGPA">
+                    <label for="cgpa">CGPA
+                        <input type="text" id="cgpa" name="cgpa" min="0" max="10" step="0.01" placeholder="Enter CGPA"
+                            required>
                     </label>
 
                 </div>
@@ -328,56 +387,41 @@
 
                     <h1>Career</h1>
 
-
-                    <label for="skills">
-                        Skills
-
+                    <label for="skills"> Skills
                         <input type="text" name="skills" id="skills" placeholder="e.g. HTML, CSS, JavaScript">
                     </label>
 
 
-                    <label for="certifications">
-                        Certifications
-
+                    <label for="certifications">Certifications
                         <input type="text" name="certifications" id="certifications"
                             placeholder="e.g. AWS, Python, Google Analytics">
                     </label>
 
 
-                    <label for="internships">
-                        Internships
-
+                    <label for="internships">Internships
                         <input type="text" name="internships" id="internships"
                             placeholder="e.g. Web Development, Data Science">
                     </label>
 
 
-                    <label for="projects">
-                        Projects
-
+                    <label for="projects">Projects
                         <input type="text" name="projects" id="projects"
                             placeholder="e.g. Portfolio, E-Commerce Website">
                     </label>
 
 
-                    <label for="linkedin">
-                        LinkedIn URL
-
-                        <input type="url" name="linkedin" id="linkedin" placeholder="https://linkedin.com/in/username">
+                    <label for="linkedin">LinkedIn URL <input type="url" name="linkedin" id="linkedin"
+                            placeholder="https://linkedin.com/in/username" required>
                     </label>
 
 
-                    <label for="github">
-                        GitHub URL
-
-                        <input type="url" name="github" id="github" placeholder="https://github.com/username">
+                    <label for="github">GitHub URL<input type="url" name="github" id="github"
+                            placeholder="https://github.com/username" required>
                     </label>
 
 
-                    <label for="resume">
-                        Resume Link
-
-                        <input type="url" name="resume" id="resume" placeholder="https://example.com/resume">
+                    <label for="resume">LeetCode URL<input type="url" name="resume" id="resume"
+                            placeholder="https://example.com/username" required>
                     </label>
 
 
@@ -394,42 +438,29 @@
                 <!-- SOCIAL / PERSONALITY -->
 
                 <div class="socialPersonality">
-
                     <h1>Social/Personality</h1>
-
-
-                    <label for="hobbies">
-                        Hobbies
-
+                    <label for="hobbies">Hobbies
                         <input type="text" name="hobbies" id="hobbies" placeholder="e.g. Reading, Gaming, Music">
                     </label>
 
 
-                    <label for="languages">
-                        Languages Known
-
+                    <label for="languages">Languages Known
                         <input type="text" name="languages" id="languages" placeholder="e.g. English, Hindi, French">
                     </label>
 
 
-                    <label for="achievements">
-                        Achievements/Awards
-
+                    <label for="achievements">Achievements/Awards
                         <input type="text" name="achievements" id="achievements"
                             placeholder="e.g. Hackathon Winner, Best Project">
                     </label>
 
 
-                    <label for="clubs">
-                        Club Memberships
-
+                    <label for="clubs">Club Memberships
                         <input type="text" name="clubs" id="clubs" placeholder="e.g. Coding Club, Sports Club">
                     </label>
 
 
-                    <label for="socialHandles">
-                        Social Handles
-
+                    <label for="socialHandles">Social Handles
                         <input type="text" name="socialHandles" id="socialHandles"
                             placeholder="e.g. Instagram, X, Discord">
                     </label>
@@ -437,9 +468,7 @@
                 </div>
 
 
-                <button type="submit" class="submit">
-                    Add Student
-                </button>
+                <button type="submit" class="submit">Add Student</button>
 
             </form>
 
@@ -636,6 +665,8 @@
         </div>
 
     </div>
+
+
 
 
 
