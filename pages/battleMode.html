@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Mode | Nodus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../files/assets/logo_whitebg.png">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/battleMode.css">
+</head>
+<body>
+    <div class="battle-page">
+        <header class="battle-header">
+            <nav class="navbar" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="manage.html">Manage</a>
+                <a href="Printdetails.html">Student Detail</a>
+                <a href="careerAnalysis.html">Career Path</a>
+                <a class="active" href="battleMode.html">Battle Mode</a>
+            </nav>
+        </header>
+
+        <main class="battle-main">
+            <section class="battle-intro" aria-labelledby="battle-title">
+                <p class="eyebrow">HEAD-TO-HEAD COMPARISON</p>
+                <h1 id="battle-title">Student Battle Mode</h1>
+                <p>Choose two students, compare their profiles, and see who leads on the overall profile score.</p>
+            </section>
+
+            <section class="selection-panel" aria-label="Student selection">
+                <div class="student-picker">
+                    <label for="studentOne">Student one</label>
+                    <select id="studentOne"><option value="">Choose a student</option></select>
+                </div>
+                <span class="versus" aria-hidden="true">VS</span>
+                <div class="student-picker">
+                    <label for="studentTwo">Student two</label>
+                    <select id="studentTwo"><option value="">Choose a student</option></select>
+                </div>
+                <button id="startBattle" type="button">Start battle</button>
+            </section>
+
+            <p id="battleMessage" class="battle-message" role="alert" aria-live="polite"></p>
+
+            <section id="battleResults" class="battle-results" hidden aria-live="polite">
+                <div id="winnerBanner" class="winner-banner"></div>
+                <div id="studentCards" class="student-cards"></div>
+
+                <section class="comparison-panel" aria-labelledby="comparison-title">
+                    <div class="panel-heading">
+                        <p class="eyebrow">THE SCORECARD</p>
+                        <h2 id="comparison-title">Category comparison</h2>
+                    </div>
+                    <div id="comparisonGrid" class="comparison-grid"></div>
+                </section>
+
+                <aside class="scoring-note">
+                    <strong>How the winner is chosen:</strong> CGPA contributes up to 60 points. Skills, projects, certifications, internships, achievements, clubs, and languages contribute the remaining 40 points based on the listed items. A tie is declared when both overall scores are equal.
+                </aside>
+            </section>
+
+            <section id="emptyState" class="empty-state">
+                <span aria-hidden="true">⚔</span>
+                <h2>Ready when you are</h2>
+                <p>Add at least two students in Manage, then select them here to begin a comparison.</p>
+                <a href="manage.html">Go to Manage</a>
+            </section>
+        </main>
+    </div>
+    <script src="../scripts/battleMode.js"></script>
+</body>
+</html>
