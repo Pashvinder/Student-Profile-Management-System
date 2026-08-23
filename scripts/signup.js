@@ -96,7 +96,7 @@ form.addEventListener("submit", function (e) {
     form.reset();
     createAccountBtn.style.display = "none";
 
-    window.location.href = "signin.html"; // ← redirect last
+    window.location.href = "signin.html"; 
 });
 
 termsCheck.addEventListener("change", function () {
