@@ -1,8 +1,7 @@
 :root {
-    --green: #176b3a;
-    --deep: #0f3e25;
+    --green: #008200;
+    --green: #008200;
     --mint: #e7f4ec;
-    --ink: #193025;
     --paper: rgba(255, 255, 255, .88);
 }
 
@@ -12,8 +11,10 @@
 
 body {
     margin: 0;
-    color: var(--ink);
-    background: linear-gradient(rgba(255, 255, 255, .76), rgba(244, 251, 247, .88)), url("../files/assets/page_bg.png") center/cover fixed;
+    color: var(--green);
+    font-family: "Teachers", sans-serif;
+
+    background:  url("../files/assets/page_bg.png") center/cover fixed;
 }
 
 .battle-page {
@@ -30,7 +31,7 @@ body {
 }
 
 .navbar a.active {
-    color: var(--deep);
+    color: var(--green);
     font-weight: 800;
 }
 
@@ -47,15 +48,15 @@ body {
 
 .eyebrow {
     color: var(--green);
-    font: 700 .76rem "Space Grotesk", sans-serif;
+    font: 700 .76rem ;
     letter-spacing: .14em;
     margin: 0 0 8px;
 }
 
 .battle-intro h1 {
-    font: 700 clamp(2rem, 5vw, 3.4rem) "Space Grotesk", sans-serif;
+    font: 700 clamp(2rem, 5vw, 3.4rem) ;
     margin: 0;
-    color: var(--deep);
+    color: var(--green);
 }
 
 .battle-intro>p:last-child {
@@ -88,7 +89,7 @@ body {
 }
 
 .student-picker label {
-    color: var(--deep);
+    color: var(--green);
     font-weight: 750;
 }
 
@@ -96,7 +97,7 @@ body {
     width: 100%;
     min-height: 46px;
     padding: 0 12px;
-    color: var(--ink);
+    color: var(--green);
     font: inherit;
     background: #fff;
     border: 1px solid #b9d6c4;
@@ -117,7 +118,7 @@ body {
     color: #fff;
     background: var(--green);
     border-radius: 50%;
-    font: 700 .84rem "Space Grotesk", sans-serif;
+    font: 700 .84rem ;
 }
 
 button,
@@ -128,7 +129,7 @@ button,
     background: var(--green);
     border: 0;
     border-radius: 10px;
-    font: 700 .92rem "Space Grotesk", sans-serif;
+    font: 700 .92rem ;
     cursor: pointer;
     text-decoration: none;
     transition: transform .18s, background .18s;
@@ -136,7 +137,7 @@ button,
 
 button:hover,
 .empty-state a:hover {
-    background: var(--deep);
+    background: var(--green);
     transform: translateY(-2px);
 }
 
@@ -163,10 +164,10 @@ button:disabled {
 .winner-banner {
     padding: 16px 22px;
     color: #fff;
-    background: linear-gradient(105deg, var(--deep), var(--green));
+    background: linear-gradient(105deg, var(--green), var(--green));
     border-radius: 14px;
     box-shadow: 0 10px 20px rgba(15, 62, 37, .17);
-    font: 700 clamp(1rem, 2.5vw, 1.25rem) "Space Grotesk", sans-serif;
+    font: 700 clamp(1rem, 2.5vw, 1.25rem) ;
     text-align: center;
 }
 
@@ -188,8 +189,7 @@ button:disabled {
 }
 
 .student-card.is-winner {
-    border: 2px solid #d5a529;
-    box-shadow: 0 12px 28px rgba(183, 135, 20, .18);
+    border: 2px solid #008200;
 }
 
 .student-photo {
@@ -203,7 +203,7 @@ button:disabled {
 
 .student-card h2 {
     margin: 6px 0 4px;
-    color: var(--deep);
+    color: var(--green);
     font-size: 1.35rem;
 }
 
@@ -228,7 +228,7 @@ button:disabled {
 
 .overall-score strong {
     color: var(--green);
-    font: 700 2rem "Space Grotesk", sans-serif;
+    font: 700 2rem ;
 }
 
 .overall-score small {
@@ -271,8 +271,8 @@ button:disabled {
 
 .panel-heading h2 {
     margin: 0;
-    color: var(--deep);
-    font: 700 1.55rem "Space Grotesk", sans-serif;
+    color: var(--green);
+    font: 700 1.55rem ;
 }
 
 .comparison-grid {
@@ -301,7 +301,7 @@ button:disabled {
 }
 
 .comparison-row strong {
-    color: var(--deep);
+    color: var(--green);
 }
 
 .comparison-row .leads {
@@ -321,7 +321,7 @@ button:disabled {
 }
 
 .scoring-note strong {
-    color: var(--deep);
+    color: var(--green);
 }
 
 .empty-state {
@@ -340,7 +340,7 @@ button:disabled {
 
 .empty-state h2 {
     margin: 0;
-    color: var(--deep);
+    color: var(--green);
 }
 
 .empty-state p {

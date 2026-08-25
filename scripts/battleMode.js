@@ -132,7 +132,7 @@
         var firstScore = scoreStudent(first);
         var secondScore = scoreStudent(second);
         var tie = firstScore === secondScore;
-        winnerBanner.textContent = tie ? "It’s a draw — both students earned " + firstScore + "/100." : "🏆 " + safeText(firstScore > secondScore ? first.name : second.name) + " wins with " + Math.max(firstScore, secondScore) + "/100!";
+        winnerBanner.textContent = tie ? "It’s a draw — both students earned " + firstScore + "/100." : safeText(firstScore > secondScore ? first.name : second.name) + " wins with " + Math.max(firstScore, secondScore) + "/100!";
         cards.replaceChildren(createStudentCard(first, firstScore, !tie && firstScore > secondScore), createStudentCard(second, secondScore, !tie && secondScore > firstScore));
         comparisonGrid.replaceChildren();
         [
