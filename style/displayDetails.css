@@ -135,6 +135,7 @@
 
 .top{
     display: flex;
+    /* gap: 2rem; */
     align-items: center;
     justify-content: left;
     margin: 2rem;
@@ -188,4 +189,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+.goToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+}
+
+.goToTop a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    /* box-shadow: 0 4px 10px rgba(0,0,0,0.3); */
+    transition: background 0.2s, transform 0.2s;
+}
+
+.goToTop a:hover {
+    transform: translateY(-3px);
+}
+
+.goToTop img {
+    width: 20px;
+    height: 20px;
 }

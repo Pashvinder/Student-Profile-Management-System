@@ -22,6 +22,8 @@ body {
 
 
 .navbar {
+    position: sticky;
+    margin-top: 1rem;
     width: min(760px, 100%);
     background: rgba(255, 255, 255, .77);
     backdrop-filter: blur(10px);
