@@ -7,7 +7,7 @@ if (!currentUser) {
 else {
     const user = JSON.parse(currentUser);
 
-    if (user.role !== "admin") {
+    if (user.role !== "Admin") {
         window.location.replace("unauthorise.html");
     }
 }

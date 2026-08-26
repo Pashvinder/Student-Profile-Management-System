@@ -52,7 +52,7 @@ function validUsername(username) {
     let allRegisteredUsers = JSON.parse(localStorage.getItem("users")) || [];
 
     for (let i = 0; i < allRegisteredUsers.length; i++) {
-        if (allRegisteredUsers[i].username.toLowerCase() === username.toLowerCase()) {
+        if (allRegisteredUsers[i].username?.toLowerCase() === username.toLowerCase()) {
             usernameMessage.innerText = "Username already exists";
             usernameMessage.style.color = "red";
             return false;
@@ -96,7 +96,7 @@ form.addEventListener("submit", function (e) {
     form.reset();
     createAccountBtn.style.display = "none";
 
-    window.location.href = "signin.html"; 
+    window.location.href = "signin.html";
 });
 
 termsCheck.addEventListener("change", function () {
