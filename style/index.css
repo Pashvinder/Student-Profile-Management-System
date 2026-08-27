@@ -9,21 +9,26 @@ html {
   min-height: 100%;
 }
 
+/* ══ BASE BODY ══ */
 body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-
   font-family: "Teachers", sans-serif;
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 
+  /* light mode — notebook bg */
   background:
-    linear-gradient(rgba(255, 255, 255, 0.35),
-      rgba(255, 255, 255, 0.35)),
+    linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
     url("../files/assets/page_bg.png");
-
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+html.dark-mode body {
+  background: #121612;
 }
 
 
@@ -1229,4 +1234,160 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+
+/* ══ LIGHT MODE ══ */
+:root {
+  --bg-primary: #f5f7f0;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+
+  --text-primary: #1a1a1a;
+  --text-secondary: #3a3a3a;
+  --text-muted: #666666;
+
+  --accent: #008200;
+  --accent-hover: #005c00;
+  --accent-light: #e6f2e6;
+
+  --border: #c8dfc8;
+  --input-bg: #ffffff;
+  --shadow: rgba(0, 130, 0, 0.10);
+}
+
+/* ══ DARK MODE ══ */
+html.dark-mode {
+  --bg-primary: #121612;
+  --bg-secondary: #1a1f1a;
+  --bg-card: #1e241e;
+
+  --text-primary: #e8ede8;
+  --text-secondary: #b8c8b8;
+  --text-muted: #7a8f7a;
+
+  --accent: #5cb85c;
+  --accent-hover: #80cc80;
+  --accent-light: #1a2e1a;
+
+  --border: #2e3f2e;
+  --input-bg: #1e241e;
+  --shadow: rgba(0, 0, 0, 0.40);
+}
+
+/* ══ BASE ══ */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ══ HEADINGS ══ */
+h1,
+h2,
+h3 {
+  color: var(--accent);
+}
+
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+}
+
+/* ══ TEXT ELEMENTS ══ */
+p {
+  color: var(--text-secondary);
+}
+
+small {
+  color: var(--text-muted);
+}
+
+span {
+  color: inherit;
+}
+
+strong {
+  color: var(--text-primary);
+}
+
+label {
+  color: var(--text-secondary);
+}
+
+/* ══ LISTS ══ */
+li {
+  color: var(--text-secondary);
+}
+
+/* ══ TABLE ══ */
+th {
+  color: var(--accent);
+  background-color: var(--accent-light);
+}
+
+td {
+  color: var(--text-secondary);
+}
+
+/* ══ LINKS ══ */
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ══ BUTTONS ══ */
+button {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 2px solid var(--accent);
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* ══ TOGGLE BUTTON — override global button styles ══ */
+#toggleBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+#toggleBtn:hover {
+  background-color: transparent;
+  border: none;
+}
+
+#toggleBtn img {
+  height: 2rem;
+  border: none;
+}
+
+
+input,
+select,
+textarea {
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+}
+
+option {
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+
+/* ══ CARDS / SECTIONS ══ */
+.card,
+.section-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px var(--shadow);
 }
