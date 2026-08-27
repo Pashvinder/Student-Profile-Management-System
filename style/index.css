@@ -132,20 +132,20 @@ body {
 }
 
 .header {
-    position: sticky;
-    top: 16px;
-    z-index: 100;
+  position: sticky;
+  top: 16px;
+  z-index: 100;
 }
 
 .navbar {
-    width: 50vw;
-    padding: 12px 24px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px;
-    border-radius: 2vw;
-    box-shadow: 0.1px 0.1px 10px #239f7631;
+  width: 50vw;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  border-radius: 2vw;
+  box-shadow: 0.1px 0.1px 10px #239f7631;
 }
 
 /* HERO */
@@ -1011,4 +1011,222 @@ body {
     font-size: 9vw;
   }
 
+}
+
+
+
+
+/* ══════════════════════════════════════
+   HALL OF FAME
+══════════════════════════════════════ */
+
+.hof-section {
+  width: 100%;
+  padding: 60px 6vw 40px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #008200;
+  margin-bottom: 28px;
+}
+
+.hof-podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hof-card {
+  background: #008200c5;
+  border-radius: 16px;
+  padding: 28px 24px 24px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 30px rgba(0, 130, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hof-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 130, 0, 0.35);
+}
+
+/* 1st card slightly taller */
+.hof-card:first-child {
+  padding-top: 36px;
+  width: 220px;
+}
+
+.hof-rank {
+  font-size: 28px;
+}
+
+.hof-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -1px;
+}
+
+.hof-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+}
+
+.hof-cgpa {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+/* ══════════════════════════════════════
+   FEATURE COLUMNS
+══════════════════════════════════════ */
+
+.features-section {
+  width: 100%;
+  padding: 20px 6vw 70px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.feat-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 130, 0, 0.15);
+  border-radius: 16px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+.feat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 130, 0, 0.15);
+  border-color: #008200;
+  color: inherit;
+}
+
+.feat-icon {
+  font-size: 32px;
+}
+
+.feat-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.feat-desc {
+  font-size: 13.5px;
+  color: #666;
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+.feat-cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: #008200;
+  margin-top: 4px;
+}
+
+
+/* ══ TABLET ══ */
+@media (max-width: 1100px) {
+  .features-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hof-card {
+    width: 170px;
+  }
+
+  .hof-card:first-child {
+    width: 190px;
+  }
+}
+
+
+/* ══ MOBILE ══ */
+@media (max-width: 768px) {
+  .hof-section {
+    padding: 40px 20px 30px;
+  }
+
+  .hof-podium {
+    gap: 14px;
+  }
+
+  .hof-card {
+    width: 140px;
+    padding: 20px 16px;
+  }
+
+  .hof-card:first-child {
+    width: 160px;
+    padding-top: 26px;
+  }
+
+  .hof-avatar {
+    width: 58px;
+    height: 58px;
+    font-size: 18px;
+  }
+
+  .hof-name {
+    font-size: 14px;
+  }
+
+  .hof-cgpa {
+    font-size: 13px;
+  }
+
+  .features-section {
+    grid-template-columns: 1fr;
+    padding: 10px 20px 50px;
+    gap: 14px;
+  }
+
+  .feat-card {
+    padding: 22px 18px;
+  }
+}
+
+
+.hof-avatar-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.5);
 }
